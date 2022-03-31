@@ -1,4 +1,5 @@
 import './BarraPesquisa.css';
+import SearchIcon from '@mui/icons-material/Search';
 function BarraPesquisa(){
     return(
         <div className="barra-pesquisa-container">
@@ -11,7 +12,9 @@ function BarraPesquisa(){
                         <input type='text' className='campo-input' />
                     </div>
                     <div>
-                        <button>ICON</button>
+                        <button className="button-search">
+                            <SearchIcon/>
+                        </button>
                     </div>
                 </div>
             </form>

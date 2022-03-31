@@ -7,9 +7,18 @@
     align-items: center;
 }
 .campo-input{
-    height: 40px;
+    height: 50px;
     width: 400px;
     border: none;
+    padding: 10px;
+    font-size: 1.2em;
+    outline: none;
+}
+.button-search{
+    height: 100%;
+    border: none;
+    width: 60px;
+    cursor: pointer;
 }
 .barra-pesquisa-container{
     display: flex;
@@ -18,7 +27,10 @@
 }
 .barra-input-container{
     display: flex;
-    background-color: aqua;
+    background-color: lightgray;
     padding: 2px;
-    border: 2px solid lightgray;
+    
+}
+.barra-label-container{
+    margin-right: 10px;
 }
