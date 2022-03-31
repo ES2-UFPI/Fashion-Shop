@@ -3,7 +3,13 @@ import './Header.css';
 function Header() {
     return (
       <div className="header-container">
-        <h1>Header</h1>
+        <span>FASHION-SHOP</span>
+        <div>
+            <ul>
+                <li><a href='#'>Cadastrar</a></li>
+                <li><a href='#'>Entrar</a></li>
+            </ul>
+        </div>
       </div>
     );
   }
