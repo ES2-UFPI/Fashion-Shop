@@ -1,0 +1,50 @@
+.banner-container{
+    background-color: aqua;
+    height: 480px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../images/background-banner.jpg');
+    background-size: cover;
+}
+
+.banner-container-centro{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    flex-direction: row;
+}
+.banner-foto-esquerda{
+    width: 300px;
+    height: 400px;
+}
+.banner-foto-esquerda img{
+    width: 100%;
+    object-fit: cover;
+    height: 400px;
+    border-radius: 10px;
+}
+.banner-foto-centro{
+    width: 450px;
+    height: 400px;
+}
+.banner-foto-centro img{
+    width: 100%;
+    object-fit:cover;
+    height: 400px;
+    border-radius: 10px;
+
+}
+.banner-foto-direita{
+    width: 300px;
+    height: 400px;
+    
+}
+.banner-foto-direita img{
+    width: 100%;
+    object-fit: cover;
+    height: 400px;
+    border-radius: 10px;
+}
