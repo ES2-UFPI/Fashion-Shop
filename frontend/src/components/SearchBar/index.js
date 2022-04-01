@@ -1,7 +1,8 @@
-import './BarraPesquisa.css';
+import './styles.css';
 import SearchIcon from '@mui/icons-material/Search';
-function BarraPesquisa(){
-    return(
+
+function SearchBar() {
+    return (
         <div className="barra-pesquisa-container">
             <form className="form">
                 <div className='barra-label-container'>
@@ -13,7 +14,7 @@ function BarraPesquisa(){
                     </div>
                     <div>
                         <button className="button-search">
-                            <SearchIcon/>
+                            <SearchIcon />
                         </button>
                     </div>
                 </div>
@@ -22,4 +23,4 @@ function BarraPesquisa(){
     );
 }
 
-export default BarraPesquisa;
+export default SearchBar;
