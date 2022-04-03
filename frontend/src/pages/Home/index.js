@@ -3,6 +3,7 @@ import Header from '../../components/Header';
 import NavMascFem from '../../components/NavMascFem';
 import SearchBar from '../../components/SearchBar';
 import Section from '../../components/Section';
+import Footer from '../../components/Footer';
 
 import './styles.css';
 
@@ -17,6 +18,8 @@ function Home() {
       <Section title='Ofertas' />
       <Section title='Feminino' />
       <Section title='Masculino' />
+
+      <Footer />
     </div>
   );
 }
