@@ -1,37 +1,39 @@
-.header-container{
+.header-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    position: relative;
-    border-bottom: 1px solid #DCDCDC;
-    margin-bottom: 12px;
+    padding: 1.25rem 0;
+    border-bottom: 2px solid #DCDCDC;
+    margin-bottom: .75rem;
 }
-.header-container span{
+
+.header-container span {
     display: block;
-    font-family: 'Roboto', sans-serif;
     font-weight: 700;
+    text-transform: uppercase;
 }
-.header-container ul{
-    padding: 0px;
-    margin: 0px;
+
+.header-container ul {
+    padding: 0;
+    margin: 0;
     list-style: none;
     position: absolute;
     left: 80%;
-    top:20px;
-    width: 200px;
+    top: 1.25rem;
+    width: 12.5rem;
 }
-.header-container li{
+
+.header-container li {
     display: inline-block;
 }
-.header-container a{
-    padding: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+
+.header-container a {
+    padding: 1rem;
     text-decoration: none;
     color: black;
-    font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
 
+.header-container a:hover {
+    text-decoration: underline;
+}

@@ -2,15 +2,15 @@ import './styles.css';
 
 function Header() {
   return (
-    <div className="header-container">
-      <span>FASHION-SHOP</span>
+    <header className="header-container">
+      <span>Fashion-Shop</span>
       <div>
         <ul>
           <li><a href='#'>Cadastrar</a></li>
           <li><a href='#'>Entrar</a></li>
         </ul>
       </div>
-    </div>
+    </header>
   );
 }
 
