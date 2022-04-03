@@ -19,7 +19,17 @@
 .banner-foto-esquerda{
     width: 300px;
     height: 400px;
+    position: relative;
 }
+.banner-foto-esquerda div{
+   background-color: black;
+   position: absolute;
+   top: calc(100% - 28.39px);
+   padding: 5px;
+}
+.banner-foto-esquerda span{
+    color: aliceblue;
+ }
 .banner-foto-esquerda img{
     width: 100%;
     object-fit: cover;
@@ -29,6 +39,16 @@
 .banner-foto-centro{
     width: 450px;
     height: 400px;
+    position: relative;
+}
+.banner-foto-centro div{
+    background-color: black;
+    position: absolute;
+    top: calc(100% - 28.39px);
+    padding: 5px;
+}
+.banner-foto-centro span{
+    color: aliceblue;
 }
 .banner-foto-centro img{
     width: 100%;
@@ -40,6 +60,16 @@
 .banner-foto-direita{
     width: 300px;
     height: 400px;
+    position: relative;
+}
+.banner-foto-direita div{
+    background-color: black;
+    position: absolute;
+    top: calc(100% - 28.39px);
+    padding: 5px;
+}
+.banner-foto-direita span{
+   color: aliceblue;
     
 }
 .banner-foto-direita img{
