@@ -25,10 +25,7 @@
                 "code": 150
             }
         ],
-        "space-before-function-paren": [
-            "error",
-            "ignore"
-        ],
+        "space-before-function-paren": "off",
         "require-jsdoc": [
             "error",
             {

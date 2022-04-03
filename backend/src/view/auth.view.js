@@ -1,5 +1,4 @@
-import { loginController } from '../controllers/auth.controller.js';
-import { createToken } from '../utils/auth/authValidation.js';
+import { loginController, singInController } from '../controllers/auth.controller.js';
 export function auth(app, authRoute) {
     app.post(authRoute + 'login', (req, res, next) => {
         const response = loginController(req.body);
@@ -7,6 +6,7 @@ export function auth(app, authRoute) {
     });
 
     app.post(authRoute + 'singIn', (req, res, next) => {
-        res.send({ token: createToken(req.body) });
+        const response = singInController(req.body);
+        res.send(response);
     });
 }

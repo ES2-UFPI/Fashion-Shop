@@ -14,21 +14,18 @@ export function validToken(data) {
             data,
             process.env.SECRETKEY);
         return valid ? valid : false;
-    }
-    catch {
-        return false
+    } catch {
+        return false;
     }
 }
 export function validTokenAdmin(data) {
     try {
-
         const valid = jsonwebtoken.verify(
             data,
             process.env.SECRETKEY).admin;
         return valid ? valid : false;
-    }
-    catch {
-        return false
+    } catch {
+        return false;
     }
 }
 export function createHmac(pwd) {

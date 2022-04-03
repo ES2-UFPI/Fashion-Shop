@@ -1,5 +1,5 @@
-import { userMemoryDatabase } from './databasesMemory.js';
-let users = userMemoryDatabase;
+import { userMemory } from './databasesMemory.js';
+let users = userMemory;
 export function databaseInMemory() {
     return ({
         getUsers: () => {

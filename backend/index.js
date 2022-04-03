@@ -20,7 +20,6 @@ app.use((req, res, next) => {
 });
 app.use('/app', (req, res, next) => {
     const validation = validToken(req.headers?.authorization);
-    console.log(validation);
     if (!validation) {
         res.status(401).send('Access denied');
     } else {
