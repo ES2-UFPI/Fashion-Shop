@@ -10,6 +10,7 @@
 .header-container span {
     display: block;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .header-container ul {
@@ -34,4 +35,8 @@
     text-decoration: none;
     color: black;
     font-weight: 400;
+}
+
+.header-container a:hover {
+    text-decoration: underline;
 }
