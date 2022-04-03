@@ -22,7 +22,7 @@
         "max-len": [
             "error",
             {
-                "code": 150
+                "code": 200
             }
         ],
         "space-before-function-paren": "off",
