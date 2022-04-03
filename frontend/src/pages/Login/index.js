@@ -1,6 +1,5 @@
 import Input from '../../components/Input';
 import Button from '../../components/Button';
-import Link from '../../components/Link';
 
 import './styles.css';
 
@@ -12,13 +11,13 @@ function Login() {
         <h2 className="title">Login</h2>
 
         <form className="form">
-          <Input type="text" id="username" name="username" placeholder="username" />
-          <Input type="password" id="password" name="password" placeholder="password" />
+          <Input type="text" id="username" name="username" placeholder="Nome de usuário" />
+          <Input type="password" id="password" name="password" placeholder="Senha" />
 
           <Button>Login</Button>
 
-          <Link href="#">Não possui conta? Cadastre-se</Link>
-          <Link href="#">Página inicial</Link>
+          <a href="#">Não possui conta? Cadastre-se</a>
+          <a href="#">Página inicial</a>
         </form>
 
       </div>
