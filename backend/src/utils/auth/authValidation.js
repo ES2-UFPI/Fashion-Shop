@@ -5,16 +5,32 @@ export function createToken(data) {
     return jsonwebtoken.sign(
         data,
         process.env.SECRETKEY,
-        { algorithm: 'HS256', expiresIn: Number(process.env.TTL) });
+        { expiresIn: Number(process.env.TTL) });
 }
 
+export function validToken(data) {
+    try {
+        const valid = jsonwebtoken.verify(
+            data,
+            process.env.SECRETKEY);
+        return valid ? valid : false;
+    }
+    catch {
+        return false
+    }
+}
 export function validTokenAdmin(data) {
-    return jsonwebtoken.verify(
-        data.token,
-        process.env.SECRETKEY,
-        { algorithm: 'HS256' });
-}
+    try {
 
+        const valid = jsonwebtoken.verify(
+            data,
+            process.env.SECRETKEY).admin;
+        return valid ? valid : false;
+    }
+    catch {
+        return false
+    }
+}
 export function createHmac(pwd) {
     const hmac = crypto.createHmac('sha256', process.env.SECRETKEYPWD);
     const hmacPwd = hmac.update(pwd);

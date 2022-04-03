@@ -3,7 +3,7 @@ export const userMemoryDatabase = [
         name: 'emanuel',
         email: 'emanuel@email.com',
         pwd: '464b3799884066f26498f4066de0ae2597025ac563d964ee9bb2afdac39c9bf3',
-        admin: false,
+        admin: true,
     },
     {
         name: 'guilherme',
