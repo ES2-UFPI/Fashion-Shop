@@ -11,4 +11,10 @@ export const userMemoryDatabase = [
         pwd: 'f3ded4883bf5c026ba96024b227df11b5876580507b20a96f5e2ac4dc4247551',
         admin: false,
     },
+    {
+        name: 'matheus',
+        email: 'matheus@email.com',
+        pwd: 'f3ded4883bf5c026ba96024b227df11b5876580507b20a96f5e2ac4dc4247551',
+        admin: false,
+    },
 ];
