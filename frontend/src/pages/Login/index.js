@@ -11,8 +11,8 @@ function Login() {
         <h2 className="title">Login</h2>
 
         <form className="form">
-          <Input type="text" id="username" name="username" placeholder="username" />
-          <Input type="password" id="password" name="password" placeholder="password" />
+          <Input type="text" id="username" name="username" placeholder="Nome de usuário" />
+          <Input type="password" id="password" name="password" placeholder="Senha" />
 
           <Button>Login</Button>
 
