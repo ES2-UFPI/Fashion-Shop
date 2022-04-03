@@ -13,7 +13,7 @@ export function validToken(data) {
         const valid = jsonwebtoken.verify(
             data,
             process.env.SECRETKEY);
-        return valid ? valid : false;
+        return valid ? true : false;
     } catch {
         return false;
     }
@@ -23,7 +23,7 @@ export function validTokenAdmin(data) {
         const valid = jsonwebtoken.verify(
             data,
             process.env.SECRETKEY).admin;
-        return valid ? valid : false;
+        return valid ? true : false;
     } catch {
         return false;
     }
