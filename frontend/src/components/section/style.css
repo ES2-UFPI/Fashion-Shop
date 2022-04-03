@@ -1,0 +1,31 @@
+.titulo-section{
+    font-size: 1.4em;
+    background-color: #E0F300;
+    padding: 3px;
+    font-weight: 700;
+}
+.section-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.section-container-products{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+.section-container-center{
+    width: 85%;
+}
+.section-title-container{
+    border-bottom: 1px solid #BEBEBE;
+    padding-bottom: 15px;
+    margin-bottom: 35px;
+    
+}

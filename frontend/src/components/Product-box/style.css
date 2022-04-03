@@ -1,0 +1,27 @@
+.box-product-container{
+    width: 260px;
+
+}
+.box-product-container:hover{
+    opacity: 0.8;
+    transform: scale(1.05,1.05);
+}
+
+.box-product-container img{
+    width: 100%;
+    object-fit: contain;
+    height: 260px;
+    
+}
+.box-product-container a{
+   text-decoration: none;
+   color: black;
+}
+.box-product-container h1{
+   margin: 0px;
+   font-size: 1.3em;
+   font-weight: 400;
+}
+.box-image-container{
+    background-color: #E3E3E3;
+}
