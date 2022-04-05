@@ -1,0 +1,16 @@
+button {
+  width: 40%;
+  border: none;
+  padding: .75rem 1.25rem;
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+  margin: 1rem 0;
+  border-radius: 7px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background-color: hsl(180, 80%, 40%);
+}
