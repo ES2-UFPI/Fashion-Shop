@@ -5,6 +5,7 @@ const routeList = {
     authRoute: '/auth/',
     appRoute: '/app/',
 };
+
 export function routes(application) {
     authRoute(application, routeList.authRoute);
     appRoute(application, routeList.appRoute);

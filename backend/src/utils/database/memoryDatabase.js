@@ -13,7 +13,7 @@ export function databaseInMemory() {
         getProducts: () => {
             return products;
         },
-        postUser: (product) => {
+        postProduct: (product) => {
             products = [...products, product];
             return ({ msg: 'updated with success' });
         },
