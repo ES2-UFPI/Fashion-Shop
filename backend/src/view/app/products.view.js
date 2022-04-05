@@ -6,11 +6,8 @@ export function productView(app, route, subRoute) {
         const response = getProductsController();
         res.send(response);
     });
-}
-
-export function productRegister(app, route, subRoute) {
-    app.get(route + subRoute, (req, res, next) => {
-        const response = postProductController();
+    app.post(route + subRoute, (req, res, next) => {
+        const response = postProductController(req.body);
         res.send(response);
     });
 }

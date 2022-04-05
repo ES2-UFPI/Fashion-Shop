@@ -4,6 +4,6 @@ export function getProductsModel() {
     return databaseInMemory().getProducts();
 }
 
-export function postProductModel() {
-    return databaseInMemory().postProduct();
+export function postProductModel(product) {
+    return databaseInMemory().postProduct(product);
 }
