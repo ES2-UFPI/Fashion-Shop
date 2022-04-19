@@ -2,7 +2,7 @@ import './styles.css';
 
 function Button(props) {
   return (
-    <button>{props.children}</button>
+    <button className='button-generic'>{props.children}</button>
   );
 }
 

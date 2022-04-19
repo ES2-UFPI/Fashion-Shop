@@ -1,9 +1,9 @@
 import './styles.css';
 
-function Header() {
+function Header(props) {
   return (
     <header className="header-container">
-      <span>Fashion-Shop</span>
+      {props.title !== 'adm' ? (<span>FASHION-SHOP</span>):(<span>ADMINISTRATIVO</span>)}
       <div>
         <ul>
           <li><a href='#'>Cadastrar</a></li>
