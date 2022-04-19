@@ -1,0 +1,36 @@
+.form{
+    display: flex;
+}
+.barra-label-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.campo-input{
+    height: 50px;
+    width: 400px;
+    border: none;
+    padding: 10px;
+    font-size: 1.2em;
+    outline: none;
+}
+.button-search-h{
+    height: 100%;
+    border: none;
+    width: 60px;
+    cursor: pointer;
+}
+.barra-pesquisa-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.barra-input-container{
+    display: flex;
+    background-color: #efefef;
+    padding: 2px;
+    
+}
+.barra-label-container{
+    margin-right: 10px;
+}

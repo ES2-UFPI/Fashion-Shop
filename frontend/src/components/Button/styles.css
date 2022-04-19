@@ -1,4 +1,4 @@
-button {
+.button-generic {
   width: 40%;
   border: none;
   padding: .75rem 1.25rem;
@@ -11,6 +11,6 @@ button {
   letter-spacing: 1px;
 }
 
-button:hover {
+.button-generic:hover {
   background-color: hsl(180, 80%, 40%);
 }
