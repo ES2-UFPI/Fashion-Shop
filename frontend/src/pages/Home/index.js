@@ -2,7 +2,7 @@ import Banner from '../../components/Banner';
 import Header from '../../components/Header';
 import NavMascFem from '../../components/NavMascFem';
 import SearchBar from '../../components/SearchBar';
-import Section from '../../components/Section';
+import Section from '../../components/section';
 import Footer from '../../components/Footer';
 
 import './styles.css';
