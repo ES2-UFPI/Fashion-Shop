@@ -1,0 +1,8 @@
+.comentarios-container{
+   display: flex;
+   justify-content: center;
+   margin-top: 50px;
+}
+.comentarios-centro{
+    width: 60%;
+}
