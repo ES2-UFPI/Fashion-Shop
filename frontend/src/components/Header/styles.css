@@ -34,3 +34,11 @@
 .header-container a:hover {
     text-decoration: underline;
 }
+
+@media(max-width: 500px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+}

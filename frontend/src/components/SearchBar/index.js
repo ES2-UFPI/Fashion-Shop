@@ -1,4 +1,4 @@
-import './styles-search.css';
+import './styles.css';
 import SearchIcon from '@mui/icons-material/Search';
 import { useSearchParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +9,7 @@ function SearchBar() {
     const [pesquisa, setPesquisa] = useState('');
     let [searchParams, setSearchParams] = useSearchParams();
     let navigate = useNavigate();
-    
+
     const onChanchefunc = (e) => {
         setPesquisa(e.target.value)
     }
@@ -17,9 +17,9 @@ function SearchBar() {
     const handleInput = (e) => {
         e.preventDefault()
         let p = pesquisa
-        if (p){
+        if (p) {
             navigate(`resultado?search=${p}`)
-        } 
+        }
     }
 
     return (

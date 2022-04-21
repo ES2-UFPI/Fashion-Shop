@@ -111,5 +111,51 @@
     .banner-container img {
         height: 250px;
     }
+}
 
+@media(max-width: 600px) {
+    .banner-container {
+        height: 20rem;
+    }
+
+    .banner-foto-esquerda,
+    .banner-foto-direita {
+        width: 125px;
+        height: 225px;
+    }
+
+    .banner-foto-centro {
+        width: 175px;
+        height: 225px;
+    }
+
+    .banner-container img {
+        height: 225px;
+    }
+
+    .banner-foto-esquerda div,
+    .banner-foto-centro div,
+    .banner-foto-direita div {
+        font-size: .8rem;
+        top: calc(100% - 25px);
+    }
+
+}
+
+@media(max-width: 525px) {
+
+    .banner-foto-direita,
+    .banner-foto-esquerda {
+        display: none;
+    }
+
+    .banner-foto-centro {
+        margin: 0 auto;
+        width: 225px;
+        height: 275px;
+    }
+
+    .banner-container img {
+        height: 275px;
+    }
 }
