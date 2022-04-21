@@ -24,14 +24,19 @@ function Product() {
             <h1>R$ 100.00</h1>
           </div>
           <div className='produto-buttons'>
-            <div className='pb-esq'>
-              <input type='button' value='-'/>
+            <div className='pb-container-esq'>
+              <div className='pb-esq'>
+                <input type='button' value='-'/>
+              </div>
+              <div className='pb-cen'>
+                <span>num</span>
+              </div>
+              <div className='pb-dir'>
+                <input type='button' value='+'/>
+              </div>
             </div>
-            <div className='pb-cen'>
-              <span>num</span>
-            </div>
-            <div className='pb-dir'>
-              <input type='button' value='+'/>
+            <div className='pb-container-dir'>
+              <input type='button' value='Adicionar ao carrinho'/>
             </div>
           </div>
         </div>
