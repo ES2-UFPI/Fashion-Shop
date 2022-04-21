@@ -1,5 +1,6 @@
 .box-product-container {
     width: 260px;
+    margin-bottom: 2rem;
 }
 
 .box-product-container:hover {
@@ -10,7 +11,7 @@
 .box-product-container img {
     width: 100%;
     object-fit: contain;
-    height: 260px;
+    height: 250px;
 }
 
 .box-product-container a {
@@ -22,8 +23,31 @@
     margin: 0;
     font-size: 1.3rem;
     font-weight: 400;
+    margin-bottom: .25rem;
 }
 
 .box-image-container {
     background-color: #E3E3E3;
+    border-radius: 5px;
+    margin-bottom: .5rem;
+}
+
+@media(max-width: 1250px) {
+    .box-product-container {
+        width: 225px;
+    }
+
+    .box-product-container img {
+        height: 215px;
+    }
+}
+
+@media(max-width: 900px) {
+    .box-product-container {
+        width: 200px;
+    }
+
+    .box-product-container img {
+        height: 175px;
+    }
 }

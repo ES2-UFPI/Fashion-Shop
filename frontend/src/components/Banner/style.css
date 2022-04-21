@@ -35,7 +35,7 @@
 .banner-container img {
     width: 100%;
     object-fit: cover;
-    height: 400px;
+    height: 100%;
     border-radius: 10px;
 }
 
@@ -52,4 +52,64 @@
 .banner-foto-centro span,
 .banner-foto-direita span {
     color: aliceblue;
+}
+
+@media(max-width: 1250px) {
+    .banner-container {
+        height: 27.5rem;
+    }
+
+    .banner-foto-esquerda,
+    .banner-foto-direita {
+        width: 250px;
+        height: 350px;
+    }
+
+    .banner-foto-centro {
+        width: 300px;
+        height: 350px;
+    }
+}
+
+@media(max-width: 950px) {
+    .banner-container {
+        height: 25rem;
+    }
+
+    .banner-foto-esquerda,
+    .banner-foto-direita {
+        width: 200px;
+        height: 300px;
+    }
+
+    .banner-foto-centro {
+        width: 250px;
+        height: 300px;
+    }
+
+    .banner-container img {
+        height: 300px;
+    }
+}
+
+@media(max-width: 775px) {
+    .banner-container {
+        height: 22.5rem;
+    }
+
+    .banner-foto-esquerda,
+    .banner-foto-direita {
+        width: 150px;
+        height: 250px;
+    }
+
+    .banner-foto-centro {
+        width: 200px;
+        height: 250px;
+    }
+
+    .banner-container img {
+        height: 250px;
+    }
+
 }
