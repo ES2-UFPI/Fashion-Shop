@@ -1,0 +1,22 @@
+.centro-produto-container{
+    display: flex;
+    justify-content: center;
+
+    margin-top: 50px;
+}
+.produto-image-container{
+    background-color: blue;
+    margin-right: 40px;
+}
+.produto-image-container img{
+    width: 270px;
+    height: 450px;
+    object-fit: contain;
+}
+.produto-infos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 600px;
+    background-color: aqua;
+}
