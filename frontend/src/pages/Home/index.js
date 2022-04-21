@@ -1,9 +1,9 @@
-import Banner from '../../components/Banner/index';
-import Header from '../../components/Header/index';
-import NavMascFem from '../../components/NavMascFem/index';
-import SearchBar from '../../components/SearchBar/index';
-import Section from '../../components/section/index';
-import Footer from '../../components/Footer/index';
+import Banner from '../../components/Banner';
+import Header from '../../components/Header';
+import NavMascFem from '../../components/NavMascFem';
+import SearchBar from '../../components/SearchBar';
+import Section from '../../components/Section';
+import Footer from '../../components/Footer';
 
 import './styles.css';
 
