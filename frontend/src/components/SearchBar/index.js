@@ -1,4 +1,4 @@
-import './styles-search.css';
+import './styles.css';
 import SearchIcon from '@mui/icons-material/Search';
 import { useSearchParams } from "react-router-dom";
 import { useNavigate, useLocation } from "react-router-dom";
