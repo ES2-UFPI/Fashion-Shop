@@ -1,5 +1,5 @@
 .button-generic {
-  width: 40%;
+  width: 45%;
   min-width: 90px;
   border: none;
   padding: .75rem 1.5rem;
@@ -14,4 +14,10 @@
 
 .button-generic:hover {
   background-color: hsl(180, 80%, 40%);
+}
+
+@media(max-width: 625px) {
+  .button-generic {
+    width: 100%;
+  }
 }
