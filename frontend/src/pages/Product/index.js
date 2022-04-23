@@ -1,42 +1,49 @@
-import Header from '../../components/Header';
-import './styles.css';
+import { useState } from 'react';
+
 import image from '../../images/ca.png'
-import {useState} from 'react';
+
+import Header from '../../components/Header';
 import Comentarios from '../../components/Comentarios';
 
-function Product() {
+import './styles.css';
 
+function Product() {
   const [qtdProduto, setQtdProduto] = useState(1);
+
   const data_produto = {
-    titulo:'Lorem ipsum dolor sit amet',
-    descricao:'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet',
-    tamanho:'M',
-    preco:'124.99',
-    comentarios:[
+    titulo: 'Lorem ipsum dolor sit amet',
+    descricao: 'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet',
+    tamanho: 'M',
+    preco: '124.99',
+    comentarios: [
       {
-        nick:'username',
-        comentario:'comentario sobre o produto'
+        nick: 'username',
+        comentario: 'comentario sobre o produto'
       },
       {
-        nick:'username2',
-        comentario:'comentario sobre o produto'
+        nick: 'username2',
+        comentario: 'comentario sobre o produto'
       }
     ]
   }
+
   const incrementarQtd = () => {
-    let qtd = qtdProduto + 1;
-    setQtdProduto(qtd); 
+    setQtdProduto((prevQtd) => prevQtd + 1);
+    /*let qtd = qtdProduto + 1;
+    setQtdProduto(qtd);*/
   }
 
   const decrementarQtd = () => {
-    if(qtdProduto <= 1) return;
-    let qtd = qtdProduto - 1;
-    setQtdProduto(qtd); 
+    if (qtdProduto <= 1) return;
+    setQtdProduto((prevQtd) => prevQtd + 1);
+    /*let qtd = qtdProduto - 1;
+    setQtdProduto(qtd);*/
   }
 
   return (
     <div className="produto-container">
-      <Header/>
+      <Header />
+
       <div className='centro-produto-container'>
         <div className='produto-image-container'>
           <img src={image} />
@@ -57,21 +64,22 @@ function Product() {
           <div className='produto-buttons'>
             <div className='pb-container-esq'>
               <div className='pb-btn'>
-                <input type='button' value='-'  onClick={decrementarQtd}/>
+                <input type='button' value='-' onClick={decrementarQtd} />
               </div>
               <div className='pb-cen'>
                 <span>{qtdProduto}</span>
               </div>
               <div className='pb-btn'>
-                <input type='button' value='+' onClick={incrementarQtd}/>
+                <input type='button' value='+' onClick={incrementarQtd} />
               </div>
             </div>
             <div className='pb-container-dir'>
-              <input type='button' value='Adicionar ao Carrinho'/>
+              <input type='button' value='Adicionar ao Carrinho' />
             </div>
           </div>
         </div>
       </div>
+
       <Comentarios comentarios={data_produto.comentarios} />
     </div>
   );
