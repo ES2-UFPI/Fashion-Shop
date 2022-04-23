@@ -1,0 +1,24 @@
+
+.carrinho-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-boxes-carrinho{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1330px;
+}
+.container-boxes-titulos h3{
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.5em;
+}
+.container-boxes-titulos h1{
+    text-align: center;
+    font-weight: 400;
+    font-size: 2.5em;
+}
