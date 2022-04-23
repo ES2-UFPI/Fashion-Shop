@@ -14,7 +14,9 @@ function Login() {
           <Input type="text" id="username" name="username" placeholder="Nome de usuário" />
           <Input type="password" id="password" name="password" placeholder="Senha" />
 
+
           <Button>Login</Button>
+
 
           <a href="#">Não possui conta? Cadastre-se</a>
           <a href="#">Página inicial</a>

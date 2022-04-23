@@ -1,7 +1,8 @@
 .button-generic {
   width: 40%;
+  min-width: 90px;
   border: none;
-  padding: .75rem 1.25rem;
+  padding: .75rem 1.5rem;
   background-color: teal;
   color: white;
   cursor: pointer;
