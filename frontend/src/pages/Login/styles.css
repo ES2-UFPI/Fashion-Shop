@@ -14,13 +14,14 @@
 
 .login-wrapper {
   width: 40%;
+  max-width: 350px;
   padding: 1rem 2rem;
   background-color: white;
   border-radius: 10px;
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 300;
 }
 
@@ -34,4 +35,11 @@ a {
   font-size: .75rem;
   text-decoration: underline;
   cursor: pointer;
+}
+
+@media(max-width: 600px) {
+  .login-wrapper {
+    width: 50%;
+    min-width: 250px;
+  }
 }

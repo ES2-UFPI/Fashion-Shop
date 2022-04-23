@@ -17,7 +17,7 @@ function Register() {
           <Input type="password" id="password" name="password" placeholder="Senha" />
           <Input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmar Senha" />
 
-          <Button>Criar Conta</Button>
+          <Button>Criar conta</Button>
 
           <a href="#">Já possui conta? Faça o login</a>
           <a href="#">Página inicial</a>
