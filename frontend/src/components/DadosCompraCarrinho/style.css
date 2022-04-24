@@ -1,37 +1,36 @@
-.container-box-fechar-compra{
-
-    width: 350px;
+.container-box-fechar-compra {
     display: flex;
     flex-direction: column;
+
+    min-width: 350px;
     text-align: center;
-    padding: 20px;
+    padding: 1.25em;
     border: 2px solid lightgray;
     border-radius: 15px;
-    
 }
-.container-box-fechar-compra h3{
-    font-size: 1.7em;
+
+.container-box-fechar-compra h3 {
+    font-size: 1.7rem;
     font-weight: 400;
-    margin: 0px;
+    margin: 0;
 }
-.container-box-fechar-compra div{
-    margin-top: 15px;
-    margin-bottom: 15px;
+
+.container-box-fechar-compra div {
+    margin: 1rem 0;
 }
-.container-box-fechar-compra input{
+
+.container-box-fechar-compra input {
     width: 90%;
-    padding: 15px;
+    padding: .75em 1em;
     background-color: black;
     border: none;
     border-radius: 10px;
     color: aliceblue;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
-.cbf-meio{
+.cbf-meio {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 }
-

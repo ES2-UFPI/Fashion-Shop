@@ -1,75 +1,84 @@
-.container-carrinho-box{
+.container-carrinho-box {
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid lightgray;
-    margin-bottom: 20px;
-    width: 700px;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20px;
+
+    border-bottom: 2px solid lightgray;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+
+    max-width: 700px;
 }
-.div-image-carrinho img{
+
+.div-image-carrinho img {
     object-fit: contain;
     height: 170px;
     width: 170px;
 }
 
-.c-2{
+.c-2 {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-left: 20px;
+    margin-left: 1.25rem;
 }
-.container-quant-preco{
+
+.container-quant-preco {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 2rem;
 }
 
-.c-container-buttons{
-    margin-bottom: 20px;
+.c-container-buttons {
+    margin-bottom: 1.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.c-cen-carrinho{
+.c-cen-carrinho {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50px;
     height: 50px;
 }
-.c-cen-carrinho span{
-    font-size: 2.0em;
+
+.c-cen-carrinho span {
+    font-size: 2rem;
 }
 
-.container-preco-carrinho span{
-    font-size: 2.0em;
+.container-preco-carrinho span {
+    font-size: 2rem;
 }
-.c-btn-carrinho input{
+
+.c-btn-carrinho input {
     border: none;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     background-color: white;
     cursor: pointer;
     width: 50px;
     height: 50px;
 }
 
-.cic p{
-    font-size: 1.5em;
-    margin: 0px;
+.cic p {
+    font-size: 1.5rem;
+    margin: 0;
     font-weight: bold;
 }
-.cic span{
-   font-weight: 400;
+
+.cic span {
+    font-weight: 400;
 }
-.cic{
-    margin-bottom: 10px;
-    margin-top: 10px;
- }
-.container-info-carrinhno{
+
+.cic {
+    margin: .75rem 0;
+}
+
+.container-info-carrinhno {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
