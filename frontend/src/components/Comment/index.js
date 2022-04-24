@@ -1,6 +1,7 @@
-import './style.css'
-function Comentario(props) {
-    return ( 
+import './style.css';
+
+function Comment(props) {
+    return (
         <div className="comentario-container">
             <div className="nick-container">
                 <span>{props.nick}:</span>
@@ -9,7 +10,7 @@ function Comentario(props) {
                 <p>{props.comentario}</p>
             </div>
         </div>
-     );
+    );
 }
 
-export default Comentario;
+export default Comment;

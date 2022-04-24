@@ -3,7 +3,8 @@ import { useState } from 'react';
 import image from '../../images/ca.png'
 
 import Header from '../../components/Header';
-import Comentarios from '../../components/Comentarios';
+import Dropdown from '../../components/Dropdown';
+import CommentArea from '../../components/CommentArea';
 
 import './styles.css';
 
@@ -13,7 +14,7 @@ function Product() {
   const data_produto = {
     titulo: 'Lorem ipsum dolor sit amet',
     descricao: 'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet',
-    tamanho: 'M',
+    tamanhos: ['P', 'M', 'G'],
     preco: '124.99',
     comentarios: [
       {
@@ -48,19 +49,25 @@ function Product() {
         <div className='produto-image-container'>
           <img src={image} />
         </div>
+
         <div className='produto-infos'>
           <div className='produto-titulo'>
             <h1>{data_produto.titulo}</h1>
           </div>
+
           <div className='produto-descricao'>
             <h2>{data_produto.descricao}</h2>
           </div>
+
           <div className='produto-tamanho'>
-            <p>Tamanho: <span>{data_produto.tamanho}</span></p>
+            <label htmlFor="size-select">Tamanho: </label>
+            <Dropdown id="size-select" name="size" options={data_produto.tamanhos} />
           </div>
+
           <div className='produto-preco'>
             <span>R$ {data_produto.preco}</span>
           </div>
+
           <div className='produto-buttons'>
             <div className='pb-container-esq'>
               <div className='pb-btn'>
@@ -80,7 +87,7 @@ function Product() {
         </div>
       </div>
 
-      <Comentarios comentarios={data_produto.comentarios} />
+      <CommentArea comentarios={data_produto.comentarios} />
     </div>
   );
 }
