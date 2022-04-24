@@ -24,7 +24,7 @@ function ProdutoCarrinhoBox() {
             <div className="c-2">
                 <div className='container-info-carrinhno'>
                     <div className='cic'>
-                        <p>Produto: <span>Lorem Impsum</span></p>
+                        <p className=''>Produto: <br /><span>Lorem Impsum</span></p>
                     </div>
                     <div className='cic'>
                         <p>ID: <span>123</span></p>

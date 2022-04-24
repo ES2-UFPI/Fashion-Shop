@@ -1,4 +1,5 @@
 import DadosCompraCarrinho from "../../components/DadosCompraCarrinho";
+import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import ProdutoCarrinhoBox from "../../components/ProdutoCarrinhoBox";
 
@@ -15,7 +16,7 @@ function Cart() {
             <h1>CARRINHO</h1>
           </div>
           <div>
-            <h3>2 Produtos</h3>
+            <h3>2 Produto(s)</h3>
           </div>
         </div>
 
@@ -30,6 +31,8 @@ function Cart() {
         </div>
 
       </div>
+
+      <Footer />
     </>
   );
 }

@@ -3,16 +3,16 @@ import './style.css'
 function DadosCompraCarrinho() {
     return (
         <div className="container-box-fechar-compra">
-            <div>
+            <div className='cbf-topo'>
                 <h3>Dados da compra</h3>
             </div>
 
             <div className='cbf-meio'>
                 <div>
-                    <h3>Total</h3>
+                    <h4>Total</h4>
                 </div>
                 <div>
-                    <h3>R$ 200.00</h3>
+                    <span>R$ 200.00</span>
                 </div>
             </div>
 
