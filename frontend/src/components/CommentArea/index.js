@@ -1,15 +1,15 @@
 import Comment from "../Comment";
 
-import './style.css';
+import './styles.css';
 
-function CommentArea(props) {
+function CommentArea({ comentarios }) {
 
     return (
         <div className="comentarios-container">
             <div className="comentarios-centro">
-                <h1>Comentarios</h1>
+                <h2>Comentários</h2>
                 {
-                    props.comentarios.map((comentario) => {
+                    comentarios.map((comentario) => {
                         return (
                             <Comment key={comentario.nick} nick={comentario.nick} comentario={comentario.comentario} />
                         );
