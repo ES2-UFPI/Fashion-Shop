@@ -1,15 +1,12 @@
 import './styles.css';
 import SearchIcon from '@mui/icons-material/Search';
-import { useSearchParams } from "react-router-dom";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 
 function SearchBar() {
 
     const [pesquisa, setPesquisa] = useState('');
-    let [searchParams, setSearchParams] = useSearchParams();
     let navigate = useNavigate();
-    let location = useLocation();
     
     const onChanchefunc = (e) => {
         setPesquisa(e.target.value)
@@ -17,7 +14,6 @@ function SearchBar() {
 
     const handleInput = (e) => {
         e.preventDefault()
-        console.log(location)
         const search = pesquisa
         navigate(`../resultado?search=${search}`,{replace:true})
     }

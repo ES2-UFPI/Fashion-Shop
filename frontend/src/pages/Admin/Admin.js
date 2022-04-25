@@ -6,7 +6,7 @@ import './Admin.css';
 function Admin() {
   return (
     <div className="admin-container">
-      <Header title='adm'/>
+      <Header/>
       <AdmOptions/>
       <Outlet/>
     </div>

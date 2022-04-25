@@ -16,10 +16,12 @@ import Messages from './components/Messages';
 import NewProduct from './components/NewProduct';
 import ProductsList from './components/ProductsList';
 
+
+import { useSelector } from 'react-redux'
 import './App.css';
 
 function App() {
-  const user = true;
+  const isAdmin = useSelector(state => state.login.isAdmin)
 
   return (
     <div className="App">
@@ -32,15 +34,17 @@ function App() {
         <Route path='masculino' element={<FemMasc opt='masculino' />} />
         <Route path='feminino' element={<FemMasc opt='feminino' />} />
         <Route path='carrinho' element={<Cart />} />
-        <Route path='admin' element={<Admin />} >
-          <Route path='usuarios' element={<UserAdm />} />
-          <Route path='produtos' element={<AdmProducts />}>
-            <Route path='cadastrar' element={<NewProduct />} />
-            <Route path='listar' element={<ProductsList />} />
+        
+          <Route path='admin' element={isAdmin ? <Admin />: <Login/>} >
+            <Route path='usuarios' element={<UserAdm />} />
+            <Route path='produtos' element={<AdmProducts />}>
+              <Route path='cadastrar' element={<NewProduct />} />
+              <Route path='listar' element={<ProductsList />} />
+            </Route>
+            <Route path='transacoes' element={<Transations />} />
+            <Route path='mensagens' element={<Messages />} />
           </Route>
-          <Route path='transacoes' element={<Transations />} />
-          <Route path='mensagens' element={<Messages />} />
-        </Route>
+          
       </Routes>
     </div>
   );
