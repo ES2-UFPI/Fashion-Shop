@@ -1,15 +1,17 @@
-import './style.css'
-function Comentario(props) {
-    return ( 
+import './styles.css';
+
+function Comment({ nick, comentario }) {
+    return (
         <div className="comentario-container">
             <div className="nick-container">
-                <span>{props.nick}:</span>
+                <span>{nick}:</span>
             </div>
+
             <div className="coment-container">
-                <p>{props.comentario}</p>
+                <p>{comentario}</p>
             </div>
         </div>
-     );
+    );
 }
 
-export default Comentario;
+export default Comment;

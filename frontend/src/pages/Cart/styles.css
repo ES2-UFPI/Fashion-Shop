@@ -1,24 +1,47 @@
-
-.carrinho-container{
+.carrinho-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.container-boxes-carrinho{
+
+.container-boxes-titulos h1 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+
+.container-boxes-titulos h3 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.container-boxes-carrinho {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 90%;
-    max-width: 1330px;
+    max-width: 1250px;
 }
-.container-boxes-titulos h3{
-    text-align: center;
-    font-weight: 400;
-    font-size: 1.5em;
+
+@media(max-width: 825px) {
+    .container-boxes-carrinho {
+        flex-direction: column;
+    }
 }
-.container-boxes-titulos h1{
-    text-align: center;
-    font-weight: 400;
-    font-size: 2.5em;
+
+@media(max-width: 500px) {
+    .container-boxes-titulos h1 {
+        font-size: 1.75rem;
+    }
+
+    .container-boxes-titulos h3 {
+        font-size: 1.25rem;
+    }
+
+    .container-boxes-carrinho {
+        width: 85%;
+    }
 }
