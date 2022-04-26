@@ -13,11 +13,12 @@ function Search() {
     <div className="pesquisa-container">
       <Header/>
       <SearchBar/>
-      <div>
+      <div className='container-resultados-produto'>
         <div>
           <h3>Resultados</h3>
         </div>
-        <div>
+        <div className='container-box-resultados'>
+          <BoxProduct img={image} title='Title' preco='100.00'/>
           <BoxProduct img={image} title='Title' preco='100.00'/>
           <BoxProduct img={image} title='Title' preco='100.00'/>
           <BoxProduct img={image} title='Title' preco='100.00'/>
