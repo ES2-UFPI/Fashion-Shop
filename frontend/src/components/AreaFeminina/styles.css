@@ -1,0 +1,10 @@
+.container-box-resultados-mascfem{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.container-area-fem{
+    width: 100%;
+}

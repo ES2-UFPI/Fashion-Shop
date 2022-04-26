@@ -1,6 +1,7 @@
 .box-product-container {
     width: 260px;
     margin-bottom: 2rem;
+    margin-left: 1rem;
 }
 
 .box-product-container:hover {

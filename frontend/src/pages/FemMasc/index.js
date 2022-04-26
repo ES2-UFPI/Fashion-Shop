@@ -1,6 +1,12 @@
+import AreaFeminina from "../../components/AreaFeminina";
+import AreaMasculina from "../../components/AreaMasculina";
+
 function FemMasc(props) {
     return ( 
-        <h1>FemMasc</h1>
+        <div>
+            {props.opt==='feminino' && <AreaFeminina/>}
+            {props.opt==='masculino' && <AreaMasculina/>}
+        </div>
      );
 }
 

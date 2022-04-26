@@ -8,6 +8,32 @@ import Footer from '../../components/Footer';
 import './styles.css';
 
 function Home() {
+  const dadosHome = [
+    { 
+      id:'123',
+      imagen:'',
+      title:'Título',
+      preco:'100.00',
+    },
+    { 
+      id:'123',
+      imagen:'',
+      title:'Título',
+      preco:'100.00',
+    },
+    { 
+      id:'123',
+      imagen:'',
+      title:'Título',
+      preco:'100.00',
+    },
+    { 
+      id:'123',
+      imagen:'',
+      title:'Título',
+      preco:'100.00',
+    },
+  ]
   return (
     <div className="home-container">
       <Header />
@@ -15,9 +41,9 @@ function Home() {
       <NavMascFem />
       <Banner />
 
-      <Section title='Ofertas' />
-      <Section title='Feminino' />
-      <Section title='Masculino' />
+      <Section title='Ofertas' dados={dadosHome}/>
+      <Section title='Feminino' dados={dadosHome} />
+      <Section title='Masculino' dados={dadosHome} />
 
       <Footer />
     </div>
