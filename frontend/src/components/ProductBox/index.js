@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom';
 import './style.css';
 
 function BoxProduct({ img, title, preco }) {
     return (
         <div className="box-product-container">
-            <a href='#'>
+            <Link to='/produto/:idProduto'>
                 <div className='box-image-container'>
                     <img src={img} />
                 </div>
@@ -12,7 +13,7 @@ function BoxProduct({ img, title, preco }) {
                     <h1>{title}</h1>
                     <span>R$ {preco}</span>
                 </div>
-            </a>
+            </Link>
         </div>
     );
 }

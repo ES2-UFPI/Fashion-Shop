@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 
@@ -19,8 +21,8 @@ function Register() {
 
           <Button>Criar conta</Button>
 
-          <a href="#">Já possui conta? Faça o login</a>
-          <a href="#">Página inicial</a>
+          <Link to="/login">Já possui conta? Faça o login</Link>
+          <Link to="/">Página inicial</Link>
         </form>
 
       </div>
