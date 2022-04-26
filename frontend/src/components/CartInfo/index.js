@@ -1,6 +1,6 @@
-import './style.css'
+import './styles.css';
 
-function DadosCompraCarrinho() {
+function CartInfo() {
     return (
         <div className="container-box-fechar-compra">
             <div className='cbf-topo'>
@@ -23,4 +23,4 @@ function DadosCompraCarrinho() {
     );
 }
 
-export default DadosCompraCarrinho;
+export default CartInfo;

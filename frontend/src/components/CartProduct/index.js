@@ -2,7 +2,7 @@ import { useState } from 'react';
 import image from '../../images/ca.png';
 import './styles.css';
 
-function ProdutoCarrinhoBox() {
+function CartProduct() {
     const [qtdProduto, setQtdProduto] = useState(1);
 
     const incrementarQtdCart = () => {
@@ -54,4 +54,4 @@ function ProdutoCarrinhoBox() {
     );
 }
 
-export default ProdutoCarrinhoBox;
+export default CartProduct;

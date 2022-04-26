@@ -1,7 +1,7 @@
-import DadosCompraCarrinho from "../../components/DadosCompraCarrinho";
+import CartInfo from "../../components/CartInfo";
+import CartProduct from "../../components/CartProduct";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import ProdutoCarrinhoBox from "../../components/ProdutoCarrinhoBox";
 
 import './styles.css'
 
@@ -22,11 +22,11 @@ function Cart() {
 
         <div className='container-boxes-carrinho'>
           <div>
-            <ProdutoCarrinhoBox />
-            <ProdutoCarrinhoBox />
+            <CartProduct />
+            <CartProduct />
           </div>
           <div>
-            <DadosCompraCarrinho />
+            <CartInfo />
           </div>
         </div>
 
