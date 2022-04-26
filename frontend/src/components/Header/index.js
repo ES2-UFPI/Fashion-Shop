@@ -7,19 +7,19 @@ function Header() {
   const isAdmin = useSelector(state => state.login.isAdmin)
   return (
     <header className="header-container">
-      {isAdmin === false ? (<span>FASHION-SHOP</span>) : (<span>ADMINISTRATIVO</span>)}
+      {isAdmin === false ? (<Link className='logo-link' to="/">FASHION-SHOP</Link>) : (<span>ADMINISTRATIVO</span>)}
 
       <nav>
         <ul>
 
           {isLoged ? (
 
-            <li><a href='#'>Sair</a></li>
+            <li><Link to="/registrar">Sair</Link></li>
 
           ) : (
             <>
-              <li><Link to="/registrar">Cadastrar</Link></li>
-              <li><Link to="/login">Entrar</Link></li>
+              <li><Link className='opcoes-header' to="/registrar">Cadastrar</Link></li>
+              <li><Link className='opcoes-header' to="/login">Entrar</Link></li>
             </>
           )}
 
