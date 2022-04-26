@@ -26,7 +26,7 @@ function SearchBar() {
                 </div>
                 <div className='barra-input-container'>
                     <div>
-                        <input type='text' className='campo-input' onChange={onChanchefunc} />
+                        <input type='text' className='campo-input' onChange={onChanchefunc} value={pesquisa}/>
                     </div>
                     <div>
                         <button className="button-search-h" onClick={handleInput}>

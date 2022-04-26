@@ -12,6 +12,12 @@
     font-weight: 700;
     text-transform: uppercase;
 }
+.logo-link{
+    padding: 0px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: black;
+}
 
 .header-container ul {
     padding: 0;
@@ -22,14 +28,14 @@
 .header-container li {
     display: inline-block;
 }
-
-.header-container a {
+.opcoes-header{
     padding: 1rem;
     text-decoration: none;
     color: black;
     font-size: 1.1rem;
     font-weight: 400;
 }
+
 
 .header-container a:hover {
     text-decoration: underline;
