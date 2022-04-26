@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import {  useParams } from "react-router-dom";
 
 import image from '../../images/ca.png'
 
@@ -10,6 +11,20 @@ import './styles.css';
 
 function Product() {
   const [qtdProduto, setQtdProduto] = useState(1);
+  const [data, setData] = useState({})
+
+  let { idProduto } = useParams();
+  useEffect(()=>{
+    fetch(`url_do_backend/${idProduto}`)
+      .then((resposta) => {
+          if(!resposta.ok){
+            throw new Error(`HTTP Erro: ${resposta.status}`);
+          }
+          return JSON.parse(resposta.json());
+      })
+      .then(data => setData(data))
+      .catch(err => console.log(err))
+  },[])
 
   const data_produto = {
     titulo: 'Lorem ipsum dolor sit amet',
