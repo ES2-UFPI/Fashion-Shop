@@ -3,6 +3,7 @@ import ca from '../../images/ca.png';
 import './style.css';
 
 function Section(props) {
+    const dados = []
     return (
         <section className='section-container'>
             <div className='section-container-center'>

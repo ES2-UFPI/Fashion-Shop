@@ -1,0 +1,7 @@
+.container-mostra-box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    
+}
