@@ -36,16 +36,25 @@
     margin: .5rem 0;
 }
 
-.produto-tamanho p {
-    font-size: 1.5rem;
+.produto-tamanho {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.25rem;
 }
 
-.produto-tamanho span {
-    color: #5F5F5F;
+.produto-tamanho p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.size-select {
+    width: 30%;
+    font-size: 1.1rem;
 }
 
 .produto-preco {
-    margin: .75rem 0 2rem 0;
+    margin: 2rem 0;
 }
 
 .produto-preco span {
@@ -146,8 +155,7 @@
         font-size: 1rem;
     }
 
-    .produto-tamanho p,
-    .produto-tamanho span {
+    .produto-tamanho p {
         font-size: 1rem;
     }
 
@@ -198,8 +206,7 @@
         font-size: 1rem;
     }
 
-    .produto-tamanho p,
-    .produto-tamanho span {
+    .produto-tamanho p {
         font-size: .8rem;
     }
 
@@ -227,13 +234,16 @@
         font-size: .9rem;
     }
 
-    .produto-tamanho p,
-    .produto-tamanho span {
+    .produto-tamanho p {
         font-size: .75rem;
     }
 
     .produto-preco span {
         font-size: 1rem;
+    }
+
+    .size-select {
+        font-size: .9rem;
     }
 
 }

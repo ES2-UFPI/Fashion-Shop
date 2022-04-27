@@ -1,5 +1,10 @@
-import { useEffect, useState } from 'react';
+
+import { useEffect } from 'react';
 import {  useParams } from "react-router-dom";
+
+import { useState } from 'react';
+import Select from 'react-select';
+
 
 import image from '../../images/ca.png'
 
@@ -11,6 +16,7 @@ import './styles.css';
 
 function Product() {
   const [qtdProduto, setQtdProduto] = useState(1);
+
   const [data, setData] = useState({})
 
   let { idProduto } = useParams();
@@ -26,10 +32,13 @@ function Product() {
       .catch(err => console.log(err))
   },[])
 
+  const [selectedOption, setSelectedOption] = useState(null);
+
+
   const data_produto = {
     titulo: 'Lorem ipsum dolor sit amet',
     descricao: 'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet',
-    tamanho: 'M',
+    tamanhos: ['P', 'M', 'G'],
     preco: '124.99',
     comentarios: [
       {
@@ -43,17 +52,20 @@ function Product() {
     ]
   }
 
+  const sizeOptions = data_produto.tamanhos.map(tamanho => (
+    {
+      value: tamanho,
+      label: tamanho
+    }
+  ));
+
   const incrementarQtd = () => {
     setQtdProduto((prevQtd) => prevQtd + 1);
-    /*let qtd = qtdProduto + 1;
-    setQtdProduto(qtd);*/
   }
 
   const decrementarQtd = () => {
     if (qtdProduto <= 1) return;
     setQtdProduto((prevQtd) => prevQtd - 1);
-    /*let qtd = qtdProduto - 1;
-    setQtdProduto(qtd);*/
   }
 
   return (
@@ -77,7 +89,13 @@ function Product() {
             </div>
 
             <div className='produto-tamanho'>
-              <p>Tamanho: <span>{data_produto.tamanho}</span></p>
+              <p>Tamanho: </p>
+              <Select
+                className="size-select"
+                options={sizeOptions}
+                defaultValue={selectedOption}
+                onChange={setSelectedOption}
+              />
             </div>
 
             <div className='produto-preco'>
