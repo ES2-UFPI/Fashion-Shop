@@ -19,21 +19,15 @@ function Product() {
 
   const [data, setData] = useState({})
 
-  let { idProduto } = useParams();
+  let { idProduto } = useParams(); //usado para pegar o produto baseado no id passado como parametro
   useEffect(()=>{
-    fetch(`url_do_backend/${idProduto}`)
-      .then((resposta) => {
-          if(!resposta.ok){
-            throw new Error(`HTTP Erro: ${resposta.status}`);
-          }
-          return JSON.parse(resposta.json());
-      })
-      .then(data => setData(data))
-      .catch(err => console.log(err))
+              // recupera o produto pela api
   },[])
-
   const [selectedOption, setSelectedOption] = useState(null);
 
+  const comprarAction = () => {
+    //enviar dados para pagamento
+  }
 
   const data_produto = {
     titulo: 'Lorem ipsum dolor sit amet',
