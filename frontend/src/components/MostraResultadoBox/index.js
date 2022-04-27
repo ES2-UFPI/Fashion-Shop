@@ -5,13 +5,13 @@ import './styles.css'
 function MostraResultadoBox({dados}) {
     return ( 
         <div className="container-mostra-box">
-            
-            <ProductBox img={ca} title='Titulo' preco='30.00' id='123'/>
-            <ProductBox img={ca} title='Titulo' preco='30.00' id='123'/>
-            <ProductBox img={ca} title='Titulo' preco='30.00' id='123'/>
-            <ProductBox img={ca} title='Titulo' preco='30.00' id='123'/>
-            <ProductBox img={ca} title='Titulo' preco='30.00' id='123'/>
-            <ProductBox img={ca} title='Titulo' preco='30.00' id='123'/>
+            {
+                dados.map((item)=>{
+                    return(
+                        <ProductBox key={item.id} img={item.img} title={item.nome} preco={item.value} id={item.id}/>
+                    );
+                })
+            }
         </div>
      );
 }

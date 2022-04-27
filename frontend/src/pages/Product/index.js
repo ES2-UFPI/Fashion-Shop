@@ -1,5 +1,10 @@
+
+import { useEffect } from 'react';
+import {  useParams } from "react-router-dom";
+
 import { useState } from 'react';
 import Select from 'react-select';
+
 
 import image from '../../images/ca.png'
 
@@ -11,7 +16,18 @@ import './styles.css';
 
 function Product() {
   const [qtdProduto, setQtdProduto] = useState(1);
+
+  const [data, setData] = useState({})
+
+  let { idProduto } = useParams(); //usado para pegar o produto baseado no id passado como parametro
+  useEffect(()=>{
+              // recupera o produto pela api
+  },[])
   const [selectedOption, setSelectedOption] = useState(null);
+
+  const comprarAction = () => {
+    //enviar dados para pagamento
+  }
 
   const data_produto = {
     titulo: 'Lorem ipsum dolor sit amet',
