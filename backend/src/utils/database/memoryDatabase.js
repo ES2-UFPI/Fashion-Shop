@@ -11,7 +11,7 @@ export function databaseInMemory() {
             return ({ msg: 'updated with success' });
         },
         getProducts: () => {
-            return products.map(item=>(
+            return products.map((item)=>(
                 {
                     name: item.name,
                     description: item.description,
