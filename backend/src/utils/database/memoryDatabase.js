@@ -11,7 +11,16 @@ export function databaseInMemory() {
             return ({ msg: 'updated with success' });
         },
         getProducts: () => {
-            return products;
+            return products.map(item=>(
+                {
+                    name: item.name,
+                    description: item.description,
+                    img: item.img,
+                    valor: item.value,
+                }));
+        },
+        getProduct: (id) => {
+            return products.find((item)=>item.id == id);
         },
         postProduct: (product) => {
             products = [...products, product];
