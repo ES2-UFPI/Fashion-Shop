@@ -13,6 +13,9 @@ export function databaseInMemory() {
         getProducts: () => {
             return products;
         },
+        getProduct: (id) => {
+            return products.find((item)=>item.id == id);
+        },
         postProduct: (product) => {
             products = [...products, product];
             return ({ msg: 'updated with success' });

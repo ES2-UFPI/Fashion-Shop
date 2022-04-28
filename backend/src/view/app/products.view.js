@@ -6,6 +6,10 @@ export function productView(app, route, subRoute) {
         const response = getProductsController();
         res.send(response);
     });
+    app.get(route + subRoute +'/:id', (req, res, next) => {
+        const response = getProductController(req.params['id']);
+        res.send(response);
+    });
     app.post(route + subRoute, (req, res, next) => {
         const response = postProductController(req.body);
         res.send(response);
