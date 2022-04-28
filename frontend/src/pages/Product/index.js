@@ -17,14 +17,15 @@ import './styles.css';
 
 function Product() {
   const [qtdProduto, setQtdProduto] = useState(1);
-
-  const [data, setData] = useState({});
   const [selectedOption, setSelectedOption] = useState(null);
+  const [preco, setPreco] = useState(0)
   const dispatch = useDispatch()
 
   let { idProduto } = useParams(); //usado para pegar o produto baseado no id passado como parametro
   useEffect(()=>{
-              // recupera o produto pela api
+    setPreco(Number(data_produto.preco)*100)
+               // recupera o produto pela api
+               console.log('passou no effect')
   },[])
   
 
@@ -48,7 +49,7 @@ function Product() {
       }
     ]
   }
-
+  
   const sizeOptions = data_produto.tamanhos.map(tamanho => (
     {
       value: tamanho,
@@ -58,17 +59,31 @@ function Product() {
 
   const incrementarQtd = () => {
     setQtdProduto((prevQtd) => prevQtd + 1);
+    let res = Number(preco + Number(data_produto.preco)*100)
+    setPreco(res)
   }
 
   const decrementarQtd = () => {
     if (qtdProduto <= 1) return;
     setQtdProduto((prevQtd) => prevQtd - 1);
-  }
-
-  const addItemCarrinho = () => {
-      dispatch(addItem())
+    let res = Number(preco - Number(data_produto.preco)*100)
+    setPreco(res)
   }
   
+  const addItemCarrinho = () => {
+      dispatch(addItem(
+        {
+          id:'143',
+          img:'https://cdn.pixabay.com/photo/2018/10/11/17/27/male-3740359_1280.jpg',
+          titulo:data_produto.titulo, 
+          tamanho:selectedOption, 
+          value:preco,
+          qtd:qtdProduto
+        }
+      )
+    )
+  }
+
 
   return (
     <>
@@ -101,7 +116,7 @@ function Product() {
             </div>
 
             <div className='produto-preco'>
-              <span>R$ {data_produto.preco}</span>
+              <span>R$ {preco / 100}</span>
             </div>
 
             <div className='produto-buttons'>

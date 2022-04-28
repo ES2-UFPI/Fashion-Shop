@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import image from '../../images/ca.png';
+
 import './styles.css';
 
-function CartProduct() {
-    const [qtdProduto, setQtdProduto] = useState(1);
+function CartProduct({id,imagen,titulo,tamanho,value, qtd}) {
+    
+    const [qtdProduto, setQtdProduto] = useState(qtd);
 
     const incrementarQtdCart = () => {
         setQtdProduto((prevQtd) => prevQtd + 1);
@@ -18,19 +19,19 @@ function CartProduct() {
         <div className='container-carrinho-box'>
             <div className="c-1">
                 <div className='div-image-carrinho'>
-                    <img src={image} />
+                    <img src={imagen} />
                 </div>
             </div>
             <div className="c-2">
                 <div className='container-info-carrinhno'>
                     <div className='cic'>
-                        <p className=''>Produto: <br /><span>Lorem Impsum</span></p>
+                        <p className=''>Produto: <br /><span>{titulo}</span></p>
                     </div>
                     <div className='cic'>
-                        <p>ID: <span>123</span></p>
+                        <p>ID: <span>{id}</span></p>
                     </div>
                     <div className='cic'>
-                        <p>Tamanho: <span>M</span></p>
+                        <p>Tamanho: <span>{tamanho.value}</span></p>
                     </div>
                 </div>
                 <div className='container-quant-preco'>
@@ -46,7 +47,7 @@ function CartProduct() {
                         </div>
                     </div>
                     <div className='container-preco-carrinho'>
-                        <span>R$ 100.00</span>
+                        <span>R$ {value / 100}</span>
                     </div>
                 </div>
             </div>
