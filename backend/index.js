@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
 import { routes } from './src/view/routes.js';
 import { validTokenAdmin, validToken } from './src/utils/auth/authValidation.js';
 
@@ -8,8 +9,19 @@ dotenv.config();
 const PORT = process.env.PORT;
 const app = express();
 
-app.listen(PORT);
+mongoose
+.connect(process.env.MONGO_URL)
+.then(() => console.log("Conexão com o DB bem sucedida!"))
+.catch((err) => {
+    console.log(err);
+});
+
+app.listen(PORT, () => {
+    console.log("Backend server is running!");
+});
+
 app.use(bodyParser.json());
+
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers',
@@ -18,6 +30,7 @@ app.use((req, res, next) => {
         'PUT, POST, GET, DELETE, OPTIONS');
     next();
 });
+
 app.use('/app', (req, res, next) => {
     const validation = validToken(req.headers?.authorization);
     if (!validation) {
@@ -26,6 +39,7 @@ app.use('/app', (req, res, next) => {
         next();
     }
 });
+
 app.use('/admin', (req, res, next) => {
     const validation = validTokenAdmin(req.headers?.authorization);
     if (!validation) {
@@ -34,4 +48,5 @@ app.use('/admin', (req, res, next) => {
         next();
     }
 });
+
 routes(app);
