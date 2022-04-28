@@ -1,10 +1,11 @@
 
 import { useEffect } from 'react';
 import {  useParams } from "react-router-dom";
+import { useDispatch } from 'react-redux'
+import { addItem, removeItem } from '../../redux/carrinhoSlice';
 
 import { useState } from 'react';
 import Select from 'react-select';
-
 
 import image from '../../images/ca.png'
 
@@ -17,13 +18,15 @@ import './styles.css';
 function Product() {
   const [qtdProduto, setQtdProduto] = useState(1);
 
-  const [data, setData] = useState({})
+  const [data, setData] = useState({});
+  const [selectedOption, setSelectedOption] = useState(null);
+  const dispatch = useDispatch()
 
   let { idProduto } = useParams(); //usado para pegar o produto baseado no id passado como parametro
   useEffect(()=>{
               // recupera o produto pela api
   },[])
-  const [selectedOption, setSelectedOption] = useState(null);
+  
 
   const comprarAction = () => {
     //enviar dados para pagamento
@@ -61,6 +64,11 @@ function Product() {
     if (qtdProduto <= 1) return;
     setQtdProduto((prevQtd) => prevQtd - 1);
   }
+
+  const addItemCarrinho = () => {
+      dispatch(addItem())
+  }
+  
 
   return (
     <>
@@ -112,7 +120,7 @@ function Product() {
               </div>
 
               <div className='pb-container-dir'>
-                <input type='button' value='Adicionar ao Carrinho' />
+                <input type='button' value='Adicionar ao Carrinho' onClick={()=>addItemCarrinho()}/>
               </div>
 
             </div>
