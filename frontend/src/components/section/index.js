@@ -1,8 +1,8 @@
 import ProductBox from '../ProductBox';
-import ca from '../../images/ca.png';
+import productsList from '../../products';
 import './style.css';
 
-function Section({titulo, dados}) {
+function Section({ titulo }) {
     return (
         <section className='section-container'>
             <div className='section-container-center'>
@@ -11,10 +11,10 @@ function Section({titulo, dados}) {
                 </div>
 
                 <div className='section-container-products'>
-                    <ProductBox img={ca} title='Titulo' preco='30.00' />
-                    <ProductBox img={ca} title='Titulo' preco='30.00' />
-                    <ProductBox img={ca} title='Titulo' preco='30.00' />
-                    <ProductBox img={ca} title='Titulo' preco='30.00' />
+                    <ProductBox img={productsList[0].img} title={productsList[0].name} preco={productsList[0].value} />
+                    <ProductBox img={productsList[1].img} title={productsList[1].name} preco={productsList[1].value} />
+                    <ProductBox img={productsList[2].img} title={productsList[2].name} preco={productsList[2].value} />
+                    <ProductBox img={productsList[3].img} title={productsList[3].name} preco={productsList[3].value} />
                 </div>
             </div>
         </section>

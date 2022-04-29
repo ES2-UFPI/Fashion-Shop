@@ -48,9 +48,9 @@ function Home() {
       <NavMascFem />
       <Banner />
 
-      <Section titulo='Ofertas' dados={dadosHome} />
-      <Section titulo='Feminino' dados={dadosHome} />
-      <Section titulo='Masculino' dados={dadosHome} />
+      <Section titulo='Ofertas' />
+      <Section titulo='Feminino' />
+      <Section titulo='Masculino' />
 
       <Footer />
     </div>
