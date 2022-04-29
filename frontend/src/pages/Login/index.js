@@ -8,18 +8,20 @@ import './styles.css';
 
 function Login() {
 
-  const [dados, setDados] = useState({ email: '', senha: '' })
+  const [dados, setDados] = useState({ email: '', senha: '' });
 
   const handleEmail = (event) => {
     dados.email = event.target.value
     setDados(dados)
     console.log(dados)
   }
+
   const handleSenha = (event) => {
     dados.senha = event.target.value
     setDados(dados)
     console.log(dados)
   }
+
   const handleClick = (event, dados) => {
     event.preventDefault();
     // fetch(url, dados)

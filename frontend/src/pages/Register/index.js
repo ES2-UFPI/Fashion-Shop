@@ -12,6 +12,7 @@ function Register() {
   const enviarDados = () => {
 
   }
+
   return (
     <div className="register-container">
       <div className="register-wrapper">
