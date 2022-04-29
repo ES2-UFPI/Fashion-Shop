@@ -2,13 +2,15 @@ import { createSlice } from '@reduxjs/toolkit'
 
 export const carrinhoSlice = createSlice({
     name: 'carrinho',
-    initialState:{data:[]},
+    initialState:[],
     reducers:{
-        addItem: (state, action) => {},
+        addItem: (state, action) => {
+            state.push(action.payload)
+        },
         removeItem: (state, action) => {},
     }
 })
 
-export const { addItem,removeItem } = userSlice.actions
+export const { addItem,removeItem } = carrinhoSlice.actions
 
 export default carrinhoSlice.reducer

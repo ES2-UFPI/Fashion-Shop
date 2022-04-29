@@ -5,6 +5,6 @@ import carrinhoSlice from './redux/carrinhoSlice';
 export default configureStore({
   reducer: {
     login: userReducer,
-    carrinho:carrinhoSlice
+    carrinho: carrinhoSlice
   }
 })

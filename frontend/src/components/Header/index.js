@@ -20,6 +20,7 @@ function Header() {
             <>
               <li><Link className='opcoes-header' to="/registrar">Cadastrar</Link></li>
               <li><Link className='opcoes-header' to="/login">Entrar</Link></li>
+              <li><Link className='opcoes-header' to="/carrinho">Carrinho</Link></li>
             </>
           )}
 
