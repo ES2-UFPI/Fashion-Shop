@@ -1,11 +1,17 @@
-.container-barra-mascfem{
+.container-barra-mascfem {
     width: 100%;
-    margin-top: 50px;
+    margin: 3rem 0;
 }
 
-.container-barra-mascfem-centro{
+.container-barra-mascfem-centro {
     width: 85%;
     margin: auto;
-    border-left: 5px solid black; 
-    padding-left: 20px;
+    border-left: 5px solid black;
+    padding-left: 1.25rem;
+}
+
+@media(max-width: 450px) {
+    .container-barra-mascfem h2 {
+        font-size: 1.2rem;
+    }
 }
