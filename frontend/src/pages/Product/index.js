@@ -1,7 +1,7 @@
-
 import { useEffect } from 'react';
-import {  useParams } from "react-router-dom";
-import { useDispatch } from 'react-redux'
+import { useParams } from "react-router-dom";
+
+import { useDispatch } from 'react-redux';
 import { addItem, removeItem } from '../../redux/carrinhoSlice';
 
 import { useState } from 'react';
@@ -18,16 +18,17 @@ import './styles.css';
 function Product() {
   const [qtdProduto, setQtdProduto] = useState(1);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [preco, setPreco] = useState(0)
-  const dispatch = useDispatch()
+  const [preco, setPreco] = useState(0);
+  const dispatch = useDispatch();
 
   let { idProduto } = useParams(); //usado para pegar o produto baseado no id passado como parametro
-  useEffect(()=>{
-    setPreco(Number(data_produto.preco)*100)
-               // recupera o produto pela api
-               console.log('passou no effect')
-  },[])
-  
+
+  useEffect(() => {
+    setPreco(Number(data_produto.preco) * 100)
+    // recupera o produto pela api
+    console.log('passou no effect')
+  }, [])
+
 
   const comprarAction = () => {
     //enviar dados para pagamento
@@ -49,7 +50,7 @@ function Product() {
       }
     ]
   }
-  
+
   const sizeOptions = data_produto.tamanhos.map(tamanho => (
     {
       value: tamanho,
@@ -59,28 +60,28 @@ function Product() {
 
   const incrementarQtd = () => {
     setQtdProduto((prevQtd) => prevQtd + 1);
-    let res = Number(preco + Number(data_produto.preco)*100)
+    let res = Number(preco + Number(data_produto.preco) * 100)
     setPreco(res)
   }
 
   const decrementarQtd = () => {
     if (qtdProduto <= 1) return;
     setQtdProduto((prevQtd) => prevQtd - 1);
-    let res = Number(preco - Number(data_produto.preco)*100)
+    let res = Number(preco - Number(data_produto.preco) * 100)
     setPreco(res)
   }
-  
+
   const addItemCarrinho = () => {
-      dispatch(addItem(
-        {
-          id:'143',
-          img:'https://cdn.pixabay.com/photo/2018/10/11/17/27/male-3740359_1280.jpg',
-          titulo:data_produto.titulo, 
-          tamanho:selectedOption, 
-          value:preco,
-          qtd:qtdProduto
-        }
-      )
+    dispatch(addItem(
+      {
+        id: '143',
+        img: 'https://cdn.pixabay.com/photo/2018/10/11/17/27/male-3740359_1280.jpg',
+        titulo: data_produto.titulo,
+        tamanho: selectedOption,
+        value: preco,
+        qtd: qtdProduto
+      }
+    )
     )
   }
 
@@ -135,7 +136,7 @@ function Product() {
               </div>
 
               <div className='pb-container-dir'>
-                <input type='button' value='Adicionar ao Carrinho' onClick={()=>addItemCarrinho()}/>
+                <input type='button' value='Adicionar ao Carrinho' onClick={() => addItemCarrinho()} />
               </div>
 
             </div>
