@@ -1,31 +1,29 @@
 import './style.css';
 
-import img1 from '../../images/img-esquerda-banner.jpg';
-import img2 from '../../images/img-centro-banner.jpg';
-import img3 from '../../images/img-direita-banner.jpg';
+import ProductsList from '../../products.js';
 
 function Banner() {
     return (
         <div className='banner-container'>
             <div className='banner-container-centro'>
                 <div className='banner-foto-esquerda'>
-                    <img src={img1} />
+                    <img src={ProductsList[0].img} alt={ProductsList[0].description} loading="lazy" />
                     <div>
-                        <span>BLUSA R$ 30,00</span>
+                        <span>{ProductsList[0].name}</span>
                     </div>
                 </div>
 
                 <div className='banner-foto-centro'>
-                    <img src={img2} />
+                    <img src={ProductsList[1].img} alt={ProductsList[2].description} loading="lazy" />
                     <div>
-                        <span>BLUSA R$ 30,00</span>
+                        <span>{ProductsList[1].name}</span>
                     </div>
                 </div>
 
                 <div className='banner-foto-direita'>
-                    <img src={img3} />
+                    <img src={ProductsList[2].img} alt={ProductsList[2].description} loading="lazy" />
                     <div>
-                        <span>BLUSA R$ 30,00</span>
+                        <span>{ProductsList[2].name}</span>
                     </div>
                 </div>
             </div>

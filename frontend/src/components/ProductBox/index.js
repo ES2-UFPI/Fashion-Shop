@@ -11,7 +11,7 @@ function BoxProduct({ img, title, preco, id }) {
 
                 <div>
                     <h1>{title}</h1>
-                    <span>R$ {preco}</span>
+                    <span>{preco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>
                 </div>
             </Link>
         </div>
