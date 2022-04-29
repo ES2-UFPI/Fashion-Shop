@@ -1,4 +1,4 @@
-[
+const productsList = [
   {
     "id": "1",
     "name": "Jeans bonito",
@@ -124,4 +124,6 @@
       "m"
     ]
   }
-]
+];
+
+export default productsList;
