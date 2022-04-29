@@ -1,4 +1,5 @@
 import ProductBox from "../ProductBox";
+
 import './styles.css';
 
 function MostraResultadoBox({ dados }) {
@@ -7,7 +8,7 @@ function MostraResultadoBox({ dados }) {
             {
                 dados.map((item) => {
                     return (
-                        <ProductBox key={item.id} img={item.img} title={item.nome} preco={item.value} id={item.id} />
+                        <ProductBox key={item.id} img={item.img} title={item.name} preco={item.value} id={item.id} />
                     );
                 })
             }
