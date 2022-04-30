@@ -14,33 +14,6 @@ function Home() {
     // recupera o produtos pela api usando fetch
   }, []);
 
-  const dadosHome = [
-    {
-      id: '123',
-      imagen: '',
-      title: 'Título',
-      preco: '100.00',
-    },
-    {
-      id: '123',
-      imagen: '',
-      title: 'Título',
-      preco: '100.00',
-    },
-    {
-      id: '123',
-      imagen: '',
-      title: 'Título',
-      preco: '100.00',
-    },
-    {
-      id: '123',
-      imagen: '',
-      title: 'Título',
-      preco: '100.00',
-    },
-  ];
-
   return (
     <div className="home-container">
       <Header />
