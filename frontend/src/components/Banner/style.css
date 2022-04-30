@@ -32,13 +32,6 @@
     position: relative;
 }
 
-.banner-container img {
-    width: 100%;
-    object-fit: cover;
-    height: 100%;
-    border-radius: 10px;
-}
-
 .banner-foto-esquerda div,
 .banner-foto-centro div,
 .banner-foto-direita div {
@@ -52,6 +45,12 @@
 .banner-foto-centro span,
 .banner-foto-direita span {
     color: aliceblue;
+}
+
+.banner-foto-esquerda:hover,
+.banner-foto-centro:hover,
+.banner-foto-direita:hover {
+    transform: scale(1.15, 1.15);
 }
 
 @media(max-width: 1250px) {
