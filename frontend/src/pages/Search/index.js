@@ -1,22 +1,27 @@
-import './styles.css';
 import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from 'react';
+
 import Header from '../../components/Header';
 import SearchBar from '../../components/SearchBar';
 import BoxProduct from '../../components/ProductBox';
-import image from '../../images/ca.png'
-import { data } from '../../data-test'
-import { useEffect } from 'react';
+
+import productsList from "../../products";
+
+import './styles.css';
 
 
 function Search() {
   let [searchParams, setSearchParams] = useSearchParams();
-  let busca = searchParams.get('search');
+  let [filteredProducts, setFilteredProducts] = useState([]);
+
+  let search = searchParams.get('search');
 
   useEffect(() => {
-    //recupera produtos do banco de dados com o parametro passado
-  });
+    const newSearch = search.trim().toUpperCase();
+    setFilteredProducts(productsList.filter(product => product.name.trim().toUpperCase().includes(newSearch)));
+  }, []);
 
-  console.log(data);
+  console.log(filteredProducts);
 
   return (
     <div className="pesquisa-container">
@@ -29,15 +34,18 @@ function Search() {
         </div>
 
         <div className='container-box-resultados'>
-          <BoxProduct img={image} title='Title' preco='100.00' />
-          <BoxProduct img={image} title='Title' preco='100.00' />
-          <BoxProduct img={image} title='Title' preco='100.00' />
-          <BoxProduct img={image} title='Title' preco='100.00' />
-          <BoxProduct img={image} title='Title' preco='100.00' />
+          {/* Montar resultados. Retornar erro se nenhum item for encontrado */}
         </div>
+
       </div>
     </div>
   );
 }
 
 export default Search;
+
+/*<BoxProduct img={image} title='Title' preco='100.00' />
+          <BoxProduct img={image} title='Title' preco='100.00' />
+          <BoxProduct img={image} title='Title' preco='100.00' />
+          <BoxProduct img={image} title='Title' preco='100.00' />
+          <BoxProduct img={image} title='Title' preco='100.00' />*/
