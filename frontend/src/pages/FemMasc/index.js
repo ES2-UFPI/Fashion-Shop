@@ -9,22 +9,22 @@ import productsList from '../../products';
 
 import './styles.css';
 
-function FemMasc(props) {
+function FemMasc({ opt }) {
     const [filteredProducts, setFilteredProducts] = useState([]);
 
     useEffect(() => {
-        if (props.opt === 'masculino') {
+        if (opt === 'masculino') {
             setFilteredProducts(productsList.filter(product => product.sex === 'man'));
-        } else if (props.opt === 'feminino') {
+        } else if (opt === 'feminino') {
             setFilteredProducts(productsList.filter(product => product.sex === 'woman'));
         }
-    }, []);
+    }, [opt]);
 
     return (
         <div className="container-area-mascfem">
             <Header />
 
-            <BarraMascFem opt={props.opt} />
+            <BarraMascFem opt={opt} />
             <MostraResultadoBox dados={filteredProducts} />
 
             <Footer />
