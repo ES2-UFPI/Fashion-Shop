@@ -123,7 +123,24 @@ const productsList = [
       "p",
       "m"
     ]
-  }
+  },
+  {
+    "id": "9",
+    "name": "Jeans bonito",
+    "description": "Um belo jeans para dias frios",
+    "value": 20.55,
+    "img": [
+      "https://cdn.pixabay.com/photo/2018/10/11/17/27/male-3740359_1280.jpg"
+    ],
+    "sex": "man",
+    "sizes": [
+      "pp",
+      "p",
+      "m",
+      "g",
+      "gg"
+    ]
+  },
 ];
 
 export default productsList;

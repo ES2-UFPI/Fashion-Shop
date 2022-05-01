@@ -1,13 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
-
 import { useDispatch } from 'react-redux';
+
+import Select from 'react-select';
 import { addItem, removeItem } from '../../redux/carrinhoSlice';
 
-import { useState } from 'react';
-import Select from 'react-select';
-
-import image from '../../images/ca.png'
+import image from '../../images/ca.png';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
