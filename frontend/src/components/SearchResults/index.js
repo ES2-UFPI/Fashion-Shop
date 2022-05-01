@@ -2,7 +2,7 @@ import ProductBox from "../ProductBox";
 
 import './styles.css';
 
-function MostraResultadoBox({ dados }) {
+function SearchResults({ dados }) {
     return (
         <div className="container-mostra-box">
             {
@@ -16,4 +16,4 @@ function MostraResultadoBox({ dados }) {
     );
 }
 
-export default MostraResultadoBox;
+export default SearchResults;

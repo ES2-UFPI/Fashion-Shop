@@ -2,50 +2,53 @@ import { useState } from 'react';
 
 import './styles.css';
 
-function CartProduct({id,imagen,titulo,tamanho,value, qtd}) {
-    
-    const [qtdProduto, setQtdProduto] = useState(qtd);
+function CartProduct({ id, img, title, size, value, quant }) {
 
-    const incrementarQtdCart = () => {
-        setQtdProduto((prevQtd) => prevQtd + 1);
+    const [quantProduct, setQuantProduct] = useState(quant);
+
+    const incrementQuantCart = () => {
+        setQuantProduct((prevQuant) => prevQuant + 1);
     }
 
-    const decrementarQtdCart = () => {
-        if (qtdProduto <= 1) return;
-        setQtdProduto((prevQtd) => prevQtd - 1);
+    const decrementQuantCart = () => {
+        if (quantProduct <= 1) return;
+        setQuantProduct((prevQuant) => prevQuant - 1);
     }
 
     return (
         <div className='container-carrinho-box'>
             <div className="c-1">
                 <div className='div-image-carrinho'>
-                    <img src={imagen} />
+                    <img src={img} />
                 </div>
             </div>
+
             <div className="c-2">
                 <div className='container-info-carrinhno'>
                     <div className='cic'>
-                        <p className=''>Produto: <br /><span>{titulo}</span></p>
+                        <p className=''>Produto: <br /><span>{title}</span></p>
                     </div>
                     <div className='cic'>
                         <p>ID: <span>{id}</span></p>
                     </div>
                     <div className='cic'>
-                        <p>Tamanho: <span>{tamanho.value}</span></p>
+                        <p>Tamanho: <span>{size}</span></p>
                     </div>
                 </div>
+
                 <div className='container-quant-preco'>
                     <div className='c-container-buttons'>
                         <div className='c-btn-carrinho'>
-                            <input type='button' value='-' onClick={decrementarQtdCart} />
+                            <input type='button' value='-' onClick={decrementQuantCart} />
                         </div>
                         <div className='c-cen-carrinho'>
-                            <span>{qtdProduto}</span>
+                            <span>{quantProduct}</span>
                         </div>
                         <div className='c-btn-carrinho'>
-                            <input type='button' value='+' onClick={incrementarQtdCart} />
+                            <input type='button' value='+' onClick={incrementQuantCart} />
                         </div>
                     </div>
+
                     <div className='container-preco-carrinho'>
                         <span>R$ {value / 100}</span>
                     </div>

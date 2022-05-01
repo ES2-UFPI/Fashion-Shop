@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
+import Button from '../../components/Button';
+
 import '../../components/Input/styles.css'
 import '../../components/Button/styles.css'
 
@@ -24,6 +26,7 @@ function Login() {
 
   const handleClick = (event, dados) => {
     event.preventDefault();
+    console.log(event, dados);
     // fetch(url, dados)
   }
 
@@ -37,7 +40,7 @@ function Login() {
           <input className='input-generic' type="text" id="username" name="username" placeholder="Nome de usuário" onChange={(event) => handleEmail(event)} />
           <input className='input-generic' type="password" id="password" name="password" placeholder="Senha" onChange={(event) => handleSenha(event)} />
 
-          <button className='button-generic' onClick={(event) => handleClick(event, dados)}>Login</button>
+          <Button onClick={(event) => handleClick(event, dados)}>Login</Button>
 
           <Link to="/registrar">Não possui conta? Cadastre-se</Link>
           <Link to="/">Página inicial</Link>

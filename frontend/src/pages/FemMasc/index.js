@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import BarraMascFem from "../../components/BarraMascFem";
-import MostraResultadoBox from "../../components/MostraResultadoBox";
+import SearchResults from "../../components/SearchResults";
 
 import productsList from '../../products';
 
@@ -25,7 +25,7 @@ function FemMasc({ opt }) {
             <Header />
 
             <BarraMascFem opt={opt} />
-            <MostraResultadoBox dados={filteredProducts} />
+            <SearchResults dados={filteredProducts} />
 
             <Footer />
         </div>
