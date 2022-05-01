@@ -13,7 +13,7 @@ export function databaseInMemory() {
             return ({ msg: 'updated with success' });
         },
         getProducts: () => {
-            return products.map((item)=>(
+            return products.map((item) => (
                 {
                     name: item.name,
                     description: item.description,
@@ -22,17 +22,17 @@ export function databaseInMemory() {
                 }));
         },
         getProduct: (id) => {
-            return products.find((item)=>item.id == id);
+            return products.find((item) => item.id == id);
         },
         postProduct: (product) => {
             products = [...products, product];
             return ({ msg: 'updated with success' });
         },
-        getCart: (id) => {
-            return cart.find((item)=>item.id == id);
+        getCart: (userId) => {
+            return cart.find((item) => item.userId == userId);
         },
         postCart: (userId, productId) => {
-            const cartIndex = cart.findIndex((item)=>item.userId == userId);
+            const cartIndex = cart.findIndex((item) => item.userId == userId);
             const newCart = { userId: userId, products: [...cartToUpdate[cartIndex].productsId, productId] };
             cart[cartIndex] = newCart;
         },
