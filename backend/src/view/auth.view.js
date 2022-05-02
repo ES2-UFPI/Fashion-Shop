@@ -1,12 +1,12 @@
 import { loginController, singInController } from '../controllers/auth.controller.js';
 
-export function authRoute(app, authPrefix) {
-    app.post(authPrefix + 'login', (req, res, next) => {
+export function authRoute(app, authRoutes) {
+    app.post(authRoutes.logIn, (req, res, next) => {
         const response = loginController(req.body);
         res.send(response);
     });
 
-    app.post(authPrefix + 'singIn', (req, res, next) => {
+    app.post(authRoutes.singIn, (req, res, next) => {
         const response = singInController(req.body);
         res.send(response);
     });
