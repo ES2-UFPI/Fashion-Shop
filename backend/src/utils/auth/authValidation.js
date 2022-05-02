@@ -22,7 +22,7 @@ export function validTokenAdmin(data) {
     try {
         const valid = jsonwebtoken.verify(
             data,
-            process.env.SECRETKEY).admin;
+            process.env.SECRETKEY);
         return valid ? true : false;
     } catch {
         return false;

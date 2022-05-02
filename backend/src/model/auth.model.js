@@ -1,4 +1,5 @@
 import { databaseInMemory } from '../utils/database/memoryDatabase.js';
+import crypto from 'crypto';
 
 export function authLoginModel(data) {
     return databaseInMemory()
@@ -7,16 +8,16 @@ export function authLoginModel(data) {
             (item) => ({
                 name: item.name,
                 email: item.email,
+                admin: item.admin || false,
             }),
         );
 }
-export function authSingInModel(data) {
+export function authSingInModel({ name = '', email, pwd }) {
     const response = databaseInMemory()
         .getUsers()
-        .filter((item) => item.email == data.email);
-    console.log(response.length == 0);
+        .filter((item) => item.email == email);
     if (response.length == 0) {
-        const user = { name: data.name, email: data.email, pwd: data.pwd, admin: false };
+        const user = { id: crypto.randomUUID(), name, email, pwd, admin: false };
         databaseInMemory()
             .postUser(user);
         return user;

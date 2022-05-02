@@ -11,6 +11,7 @@ export function loginController(data) {
         return ({ token: null });
     }
     const token = createToken(response[0]);
+    console.log(user);
     return ({ token: token });
 }
 
