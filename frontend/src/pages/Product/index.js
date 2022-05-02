@@ -5,82 +5,78 @@ import { useDispatch } from 'react-redux';
 import Select from 'react-select';
 import { addItem, removeItem } from '../../redux/carrinhoSlice';
 
+
 import image from '../../images/ca.png';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import CommentArea from '../../components/CommentArea';
-
+import productsList from '../../products'
 import './styles.css';
 
 function Product() {
   const [qtdProduto, setQtdProduto] = useState(1);
   const [selectedOption, setSelectedOption] = useState(null);
   const [preco, setPreco] = useState(0);
+  const [produtoData, setProdutoData] = useState({});
+  const [opcoesTamanho, setOpcoesTamanho] = useState([]);
+  const [checkSize, setCheckSize] = useState(true);
   const dispatch = useDispatch();
-
+  
   let { idProduto } = useParams(); //usado para pegar o produto baseado no id passado como parametro
-
   useEffect(() => {
-    setPreco(Number(data_produto.preco) * 100)
-    // recupera o produto pela api
-    console.log('passou no effect')
-  }, [])
+    productsList.find((item) => {
+        if (item.id === idProduto){
+          setPreco(Number(item.value)*100)
+          const sizeOptions = item.sizes.map((tamanho)=>(
+              {
+                value: tamanho,
+                label: tamanho
+              }
+            )
+          )
+          setOpcoesTamanho(sizeOptions)
+          setProdutoData(item);
+        }
+    })
+  }, []) 
 
-
-  const comprarAction = () => {
-    //enviar dados para pagamento
+  const somaPrecoComEleMesmo = () => {
+      let soma = Number(preco + Number(produtoData.value) * 100)
+      setPreco(soma)
   }
 
-  const data_produto = {
-    titulo: 'Lorem ipsum dolor sit amet',
-    descricao: 'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet',
-    tamanhos: ['P', 'M', 'G'],
-    preco: '124.99',
-    comentarios: [
-      {
-        nick: 'username',
-        comentario: 'comentario sobre o produto'
-      },
-      {
-        nick: 'username2',
-        comentario: 'comentario sobre o produto'
-      }
-    ]
+  const subtraiPrecoComEleMesmo = () => {
+    let sub = Number(preco - (Number(produtoData.value) * 100))
+    setPreco(sub)
   }
-
-  const sizeOptions = data_produto.tamanhos.map(tamanho => (
-    {
-      value: tamanho,
-      label: tamanho
-    }
-  ));
 
   const incrementarQtd = () => {
     setQtdProduto((prevQtd) => prevQtd + 1);
-    let res = Number(preco + Number(data_produto.preco) * 100)
-    setPreco(res)
+    somaPrecoComEleMesmo();
   }
 
   const decrementarQtd = () => {
     if (qtdProduto <= 1) return;
     setQtdProduto((prevQtd) => prevQtd - 1);
-    let res = Number(preco - Number(data_produto.preco) * 100)
-    setPreco(res)
+    subtraiPrecoComEleMesmo()
   }
 
   const addItemCarrinho = () => {
-    dispatch(addItem(
-      {
-        id: '143',
-        img: 'https://cdn.pixabay.com/photo/2018/10/11/17/27/male-3740359_1280.jpg',
-        titulo: data_produto.titulo,
-        tamanho: selectedOption,
-        value: preco,
-        qtd: qtdProduto
-      }
-    )
-    )
+    if(selectedOption !== null){
+      dispatch(addItem(
+        {
+          id: produtoData.id,
+          img: produtoData.img,
+          titulo: produtoData.titulo,
+          tamanho: selectedOption,
+          value: preco,
+          qtd: qtdProduto
+        }
+      ))
+    }else{
+      setCheckSize(false)
+    }
   }
 
 
@@ -92,26 +88,27 @@ function Product() {
 
         <div className='centro-produto-container'>
           <div className='produto-image-container'>
-            <img src={image} />
+            <img src={produtoData.img} />
           </div>
 
           <div className='produto-infos'>
             <div className='produto-titulo'>
-              <h1>{data_produto.titulo}</h1>
+              <h1>{!produtoData ? 'challlllll' : produtoData.name}</h1>
             </div>
 
             <div className='produto-descricao'>
-              <p>{data_produto.descricao}</p>
+              <p>{produtoData.description}</p>
             </div>
 
             <div className='produto-tamanho'>
               <p>Tamanho: </p>
-              <Select
+               <Select
                 className="size-select"
-                options={sizeOptions}
+                options={opcoesTamanho}
                 defaultValue={selectedOption}
                 onChange={setSelectedOption}
-              />
+              /> 
+              <p>{!checkSize ? 'Esolha um tamanho':''}</p>
             </div>
 
             <div className='produto-preco'>
@@ -129,7 +126,8 @@ function Product() {
                 </div>
 
                 <div className='pb-btn'>
-                  <input type='button' value='+' onClick={incrementarQtd} />
+                  {produtoData && <input type='button' value='+' onClick={incrementarQtd} />}
+
                 </div>
               </div>
 
@@ -141,7 +139,7 @@ function Product() {
           </div>
         </div>
 
-        <CommentArea comentarios={data_produto.comentarios} />
+        {/* <CommentArea comentarios={{}} /> */}
       </div>
 
       <Footer />
