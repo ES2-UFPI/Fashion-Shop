@@ -21,11 +21,6 @@ function Cart() {
     setValorTotalCarrinho(array_valores.reduce((previousValue, currentValue) => previousValue + currentValue, initialCartValue));
   }, [valorTotalCarrinho]);
 
-
-  console.log(carrinho);
-  console.log(array_valores);
-  console.log(valorTotalCarrinho);
-
   return (
     <>
       <Header />
