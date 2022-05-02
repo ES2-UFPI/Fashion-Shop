@@ -20,48 +20,18 @@
 .c-2 {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     margin-left: 1.25rem;
 }
 
-.container-quant-preco {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 2rem;
-}
-
-.c-container-buttons {
-    margin-bottom: 1.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.c-cen-carrinho {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-}
-
-.c-cen-carrinho span {
-    font-size: 2rem;
+.container-preco-carrinho {
+    margin-left: 1rem;
 }
 
 .container-preco-carrinho span {
     font-size: 2rem;
-}
-
-.c-btn-carrinho input {
-    border: none;
-    font-size: 1.5rem;
-    background-color: white;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
+    font-weight: bold;
 }
 
 .cic p {
@@ -93,29 +63,14 @@ br {
         flex-direction: column;
     }
 
-    .container-quant-preco {
-        margin: 1rem 0;
-        flex-direction: row;
-    }
-
-    .c-container-buttons {
-        margin: 0 1rem 0 0;
-        border-right: 2px solid lightgray;
+    .container-preco-carrinho {
+        margin-top: 1rem;
     }
 }
 
 @media(max-width: 950px) {
-    .c-btn-carrinho input {
-        font-size: 1.25rem;
-    }
 
-    .c-cen-carrinho {
-        width: 35px;
-        height: 35px;
-    }
-
-    .container-preco-carrinho span,
-    .c-cen-carrinho span {
+    .container-preco-carrinho span {
         font-size: 1.5rem;
     }
 }
@@ -125,20 +80,10 @@ br {
         margin: 1rem auto;
         justify-content: space-between;
     }
-
-    .container-quant-preco {
-        justify-content: flex-start;
-    }
 }
 
 @media(max-width: 500px) {
-    .c-btn-carrinho input {
-        width: 35px;
-        height: 35px;
-    }
-
-    .container-preco-carrinho span,
-    .c-cen-carrinho span {
+    .container-preco-carrinho span {
         font-size: 1.25rem;
     }
 
@@ -157,18 +102,6 @@ br {
 }
 
 @media(max-width: 450px) {
-    .container-quant-preco {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .c-container-buttons {
-        margin: 0;
-        padding: .5rem 0;
-        border-right: none;
-        border-bottom: 2px solid lightgray;
-    }
-
     .container-preco-carrinho {
         margin: 1rem 0 0 .6rem;
     }
