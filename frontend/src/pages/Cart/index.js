@@ -11,13 +11,17 @@ function Cart() {
 
   const carrinho = useSelector(state => state.carrinho);
   const [valorTotalCarrinho, setValorTotalCarrinho] = useState(0)
-  const [qtdProdutos, setQtdPtodutos] = useState(0)
+  const [qtdProdutos, setQtdPtodutos] = useState(0) 
   
    const array_valores = carrinho.map((item) => {
     return item.value
   })
+  const arr = array_valores.reduce((total, value) => {
+    return total + value
+  })
+
   console.log(carrinho)
-  console.log(array_valores)
+  console.log(arr)
   
   return (
     <>
