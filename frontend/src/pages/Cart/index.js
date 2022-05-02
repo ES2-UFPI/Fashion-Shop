@@ -13,15 +13,16 @@ function Cart() {
   const [valorTotalCarrinho, setValorTotalCarrinho] = useState(0)
   const [qtdProdutos, setQtdPtodutos] = useState(0) 
   
-   const array_valores = carrinho.map((item) => {
+  const array_valores = carrinho.map((item) => {
     return item.value
   })
-  const arr = array_valores.reduce((total, value) => {
+
+  const total = array_valores.reduce((total, value) => {
     return total + value
   })
 
   console.log(carrinho)
-  console.log(arr)
+  
   
   return (
     <>
@@ -49,7 +50,7 @@ function Cart() {
             
           </div>
           <div>
-            <CartInfo />
+            <CartInfo total={total}/>
           </div>
         </div>
 
