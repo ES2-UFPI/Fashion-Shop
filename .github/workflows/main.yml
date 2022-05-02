@@ -16,12 +16,15 @@ jobs:
      uses: actions/setup-node@v1
      with:
        node-version: ${{ matrix.node-version }}
+   
    - name: Install Packages
-     run: cd frontend
-     run: npm install
+   - run: cd frontend
+   - run: npm install
+   
    - name: Build project
-     run: cd frontend
-     run: npm run build
+   - run: cd frontend
+   - run: npm run build
+   
    - name: Upload production-ready build files
      uses: actions/upload-artifact@v2
      with:
