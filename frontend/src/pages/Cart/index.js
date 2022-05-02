@@ -3,14 +3,22 @@ import CartProduct from "../../components/CartProduct";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { useSelector  } from 'react-redux'
+import { useState } from "react";
 
 import './styles.css'
 
 function Cart() {
 
   const carrinho = useSelector(state => state.carrinho);
+  const [valorTotalCarrinho, setValorTotalCarrinho] = useState(0)
+  const [qtdProdutos, setQtdPtodutos] = useState(0)
+  
+   const array_valores = carrinho.map((item) => {
+    return item.value
+  })
   console.log(carrinho)
-
+  console.log(array_valores)
+  
   return (
     <>
       <Header />
@@ -21,7 +29,7 @@ function Cart() {
             <h1>CARRINHO</h1>
           </div>
           <div>
-            <h3>2 Produto(s)</h3>
+            <h3>{carrinho.length} Produto(s)</h3>
           </div>
         </div>
 
@@ -30,7 +38,7 @@ function Cart() {
             {
               carrinho.map((item)=>{
                 return(
-                  <CartProduct key={item.id} id={item.id} titulo={item.titulo} imagen={item.img} tamanho={item.tamanho} value={item.value} qtd={item.qtd}/>
+                  <CartProduct key={item.id} id={item.id} name={item.name} img={item.img} size={item.tamanho} value={item.value} qtd={item.qtd}/>
                 );
               })
             }

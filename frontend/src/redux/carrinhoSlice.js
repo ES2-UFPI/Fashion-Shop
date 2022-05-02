@@ -7,7 +7,14 @@ export const carrinhoSlice = createSlice({
         addItem: (state, action) => {
             state.push(action.payload)
         },
-        removeItem: (state, action) => {},
+        removeItem: (state, action) => {
+            let novo_array = state.filter((item) => {
+                if(item.id !== action.payload.id){
+                    return item
+                }
+            })
+            state = novo_array
+        },
     }
 })
 
