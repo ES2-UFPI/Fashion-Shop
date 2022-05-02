@@ -13,7 +13,7 @@ function Home() {
   useEffect(() => {
     // recupera o produtos pela api usando fetch
   }, []);
-  sessionStorage.setItem('Alo', 'akakakakkaak')
+  sessionStorage.setItem('teste', 'akms3jd8u301')
   return (
     <div className="home-container">
       <Header />
