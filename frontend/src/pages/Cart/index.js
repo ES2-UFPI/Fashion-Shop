@@ -19,7 +19,8 @@ function Cart() {
 
   const total = array_valores.reduce((total, value) => {
     return total + value
-  })
+  }, 0)
+
 
   console.log(carrinho)
   
@@ -30,7 +31,7 @@ function Cart() {
 
       <div className="carrinho-container">
         <div className="container-boxes-titulos">
-          <div>
+          <div >
             <h1>CARRINHO</h1>
           </div>
           <div>
@@ -50,7 +51,7 @@ function Cart() {
             
           </div>
           <div>
-            <CartInfo total={total}/>
+           {total > 0 && <CartInfo total={total}/>}
           </div>
         </div>
 
