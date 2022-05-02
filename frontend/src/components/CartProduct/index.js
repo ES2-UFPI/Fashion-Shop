@@ -6,15 +6,6 @@ function CartProduct({ id, img, name, size, value, qtd }) {
 
     const [quantProduct, setQuantProduct] = useState(qtd);
 
-    const incrementQuantCart = () => {
-        setQuantProduct((prevQuant) => prevQuant + 1);
-    }
-
-    const decrementQuantCart = () => {
-        if (quantProduct <= 1) return;
-        setQuantProduct((prevQuant) => prevQuant - 1);
-    }
-
     return (
         <div className='container-carrinho-box'>
             <div className="c-1">
@@ -38,19 +29,15 @@ function CartProduct({ id, img, name, size, value, qtd }) {
 
                 <div className='container-quant-preco'>
                     <div className='c-container-buttons'>
-                        <div className='c-btn-carrinho'>
-                            <input type='button' value='-' onClick={decrementQuantCart} />
-                        </div>
+                        
                         <div className='c-cen-carrinho'>
                             <span>{quantProduct}</span>
                         </div>
-                        <div className='c-btn-carrinho'>
-                            <input type='button' value='+' onClick={incrementQuantCart} />
-                        </div>
+                        
                     </div>
 
                     <div className='container-preco-carrinho'>
-                        <span>R$ {value / 100}</span>
+                        <span>R$ {(value / 100).toFixed(2)}</span>
                     </div>
                 </div>
             </div>

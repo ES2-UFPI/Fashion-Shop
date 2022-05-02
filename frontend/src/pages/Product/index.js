@@ -63,7 +63,6 @@ function Product() {
   }
 
   const addItemCarrinho = () => {
-    
     if(selectedOption !== null){
       dispatch(addItem(
         {
