@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import './styles.css';
 
-function CartProduct({ id, img, title, size, value, quant }) {
+function CartProduct({ id, img, name, size, value, qtd }) {
 
-    const [quantProduct, setQuantProduct] = useState(quant);
+    const [quantProduct, setQuantProduct] = useState(qtd);
 
     const incrementQuantCart = () => {
         setQuantProduct((prevQuant) => prevQuant + 1);
@@ -26,13 +26,13 @@ function CartProduct({ id, img, title, size, value, quant }) {
             <div className="c-2">
                 <div className='container-info-carrinhno'>
                     <div className='cic'>
-                        <p className=''>Produto: <br /><span>{title}</span></p>
+                        <p className=''>Produto: <br /><span>{name}</span></p>
                     </div>
                     <div className='cic'>
                         <p>ID: <span>{id}</span></p>
                     </div>
                     <div className='cic'>
-                        <p>Tamanho: <span>{size}</span></p>
+                        <p>Tamanho: <span>{size.value}</span></p>
                     </div>
                 </div>
 

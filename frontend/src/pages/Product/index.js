@@ -63,12 +63,13 @@ function Product() {
   }
 
   const addItemCarrinho = () => {
+    
     if(selectedOption !== null){
       dispatch(addItem(
         {
           id: produtoData.id,
-          img: produtoData.img,
-          titulo: produtoData.titulo,
+          img: produtoData.img[0],
+          name: produtoData.name,
           tamanho: selectedOption,
           value: preco,
           qtd: qtdProduto
@@ -93,7 +94,7 @@ function Product() {
 
           <div className='produto-infos'>
             <div className='produto-titulo'>
-              <h1>{!produtoData ? 'challlllll' : produtoData.name}</h1>
+              <h1>{!produtoData ? 'loading...' : produtoData.name}</h1>
             </div>
 
             <div className='produto-descricao'>
