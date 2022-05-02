@@ -20,8 +20,8 @@ function Cart() {
   const total = array_valores.reduce((total, value) => {
     return total + value
   }, 0)
-
-
+  
+  
   console.log(carrinho)
   
   
