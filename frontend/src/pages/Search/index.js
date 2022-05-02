@@ -3,12 +3,11 @@ import { useEffect, useState } from 'react';
 
 import Header from '../../components/Header';
 import SearchBar from '../../components/SearchBar';
-import BoxProduct from '../../components/ProductBox';
+import SearchResults from "../../components/SearchResults";
 
 import productsList from "../../products";
 
 import './styles.css';
-
 
 function Search() {
   let [searchParams, setSearchParams] = useSearchParams();
@@ -19,7 +18,7 @@ function Search() {
   useEffect(() => {
     const newSearch = search.trim().toUpperCase();
     setFilteredProducts(productsList.filter(product => product.name.trim().toUpperCase().includes(newSearch)));
-  }, []);
+  }, [search]);
 
   console.log(filteredProducts);
 
@@ -33,9 +32,11 @@ function Search() {
           <h3>Resultados</h3>
         </div>
 
-        <div className='container-box-resultados'>
-          {/* Montar resultados. Retornar erro se nenhum item for encontrado */}
-        </div>
+        {
+          filteredProducts.length > 0 ?
+            <SearchResults dados={filteredProducts} /> :
+            <span>Nenhum resultado encontrado</span>
+        }
 
       </div>
     </div>
@@ -43,9 +44,3 @@ function Search() {
 }
 
 export default Search;
-
-/*<BoxProduct img={image} title='Title' preco='100.00' />
-          <BoxProduct img={image} title='Title' preco='100.00' />
-          <BoxProduct img={image} title='Title' preco='100.00' />
-          <BoxProduct img={image} title='Title' preco='100.00' />
-          <BoxProduct img={image} title='Title' preco='100.00' />*/
