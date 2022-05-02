@@ -1,17 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-
 import Select from 'react-select';
+
 import { addItem, removeItem } from '../../redux/carrinhoSlice';
-
-
-import image from '../../images/ca.png';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import CommentArea from '../../components/CommentArea';
-import productsList from '../../products'
+
+import productsList from '../../products';
 import './styles.css';
 
 function Product() {
@@ -22,33 +19,34 @@ function Product() {
   const [opcoesTamanho, setOpcoesTamanho] = useState([]);
   const [checkSize, setCheckSize] = useState(true);
   const dispatch = useDispatch();
-  
+
   let { idProduto } = useParams(); //usado para pegar o produto baseado no id passado como parametro
+
   useEffect(() => {
     productsList.find((item) => {
-        if (item.id === idProduto){
-          setPreco(Number(item.value)*100)
-          const sizeOptions = item.sizes.map((tamanho)=>(
-              {
-                value: tamanho,
-                label: tamanho
-              }
-            )
-          )
-          setOpcoesTamanho(sizeOptions)
-          setProdutoData(item);
-        }
+      if (item.id === idProduto) {
+        setPreco(Number(item.value) * 100);
+        const sizeOptions = item.sizes.map((tamanho) => (
+          {
+            value: tamanho,
+            label: tamanho
+          }
+        )
+        )
+        setOpcoesTamanho(sizeOptions);
+        setProdutoData(item);
+      }
     })
-  }, []) 
+  }, [])
 
   const somaPrecoComEleMesmo = () => {
-      let soma = Number(preco + Number(produtoData.value) * 100)
-      setPreco(soma)
+    let soma = Number(preco + Number(produtoData.value) * 100);
+    setPreco(soma);
   }
 
   const subtraiPrecoComEleMesmo = () => {
-    let sub = Number(preco - (Number(produtoData.value) * 100))
-    setPreco(sub)
+    let sub = Number(preco - (Number(produtoData.value) * 100));
+    setPreco(sub);
   }
 
   const incrementarQtd = () => {
@@ -59,12 +57,12 @@ function Product() {
   const decrementarQtd = () => {
     if (qtdProduto <= 1) return;
     setQtdProduto((prevQtd) => prevQtd - 1);
-    subtraiPrecoComEleMesmo()
+    subtraiPrecoComEleMesmo();
   }
 
   const addItemCarrinho = () => {
-    
-    if(selectedOption !== null){
+
+    if (selectedOption !== null) {
       dispatch(addItem(
         {
           id: produtoData.id,
@@ -75,8 +73,8 @@ function Product() {
           qtd: qtdProduto
         }
       ))
-    }else{
-      setCheckSize(false)
+    } else {
+      setCheckSize(false);
     }
   }
 
@@ -103,13 +101,13 @@ function Product() {
 
             <div className='produto-tamanho'>
               <p>Tamanho: </p>
-               <Select
+              <Select
                 className="size-select"
                 options={opcoesTamanho}
                 defaultValue={selectedOption}
                 onChange={setSelectedOption}
-              /> 
-              <p>{!checkSize ? 'Esolha um tamanho':''}</p>
+              />
+              <p>{!checkSize ? <span className="alert">Escolha um tamanho</span> : ''}</p>
             </div>
 
             <div className='produto-preco'>
@@ -140,7 +138,6 @@ function Product() {
           </div>
         </div>
 
-        {/* <CommentArea comentarios={{}} /> */}
       </div>
 
       <Footer />

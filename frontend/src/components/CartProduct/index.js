@@ -34,25 +34,16 @@ function CartProduct({ id, img, name, size, value, qtd }) {
                     <div className='cic'>
                         <p>Tamanho: <span>{size.value}</span></p>
                     </div>
-                </div>
-
-                <div className='container-quant-preco'>
-                    <div className='c-container-buttons'>
-                        <div className='c-btn-carrinho'>
-                            <input type='button' value='-' onClick={decrementQuantCart} />
-                        </div>
-                        <div className='c-cen-carrinho'>
-                            <span>{quantProduct}</span>
-                        </div>
-                        <div className='c-btn-carrinho'>
-                            <input type='button' value='+' onClick={incrementQuantCart} />
-                        </div>
-                    </div>
-
-                    <div className='container-preco-carrinho'>
-                        <span>R$ {value / 100}</span>
+                    <div className='cic'>
+                        <p>Quantidade: <span>{qtd}</span></p>
                     </div>
                 </div>
+
+
+                <div className='container-preco-carrinho'>
+                    <span>R$ {value / 100}</span>
+                </div>
+
             </div>
         </div>
     );
