@@ -1,9 +1,8 @@
+import { cartView } from './cart.view.js';
 import { productView } from './products.view.js';
 
-const routeList = {
-    product: 'products',
-};
 
-export function appRoute(app, appPrefix) {
-    productView(app, appPrefix, routeList.product);
+export function appRoute(app, appRoutes) {
+    productView(app, appRoutes.products);
+    cartView(app, appRoutes.cart);
 }

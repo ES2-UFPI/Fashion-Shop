@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import Banner from '../../components/Banner';
 import Header from '../../components/Header';
 import NavMascFem from '../../components/NavMascFem';
@@ -8,6 +10,10 @@ import Footer from '../../components/Footer';
 import './styles.css';
 
 function Home() {
+  useEffect(() => {
+    // recupera o produtos pela api usando fetch
+  }, []);
+
   return (
     <div className="home-container">
       <Header />
@@ -15,9 +21,9 @@ function Home() {
       <NavMascFem />
       <Banner />
 
-      <Section title='Ofertas' />
-      <Section title='Feminino' />
-      <Section title='Masculino' />
+      <Section titulo='Ofertas' />
+      <Section titulo='Feminino' />
+      <Section titulo='Masculino' />
 
       <Footer />
     </div>

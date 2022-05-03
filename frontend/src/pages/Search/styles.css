@@ -1,0 +1,10 @@
+.container-resultados-produto{
+    width: 85%;
+    margin: auto;
+}
+
+.container-box-resultados{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

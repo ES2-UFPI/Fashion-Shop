@@ -1,18 +1,19 @@
+import { Link } from 'react-router-dom';
 import './style.css';
 
-function BoxProduct({ img, title, preco }) {
+function BoxProduct({ img, title, preco, id }) {
     return (
         <div className="box-product-container">
-            <a href='#'>
+            <Link to={`/produto/${id}`} >
                 <div className='box-image-container'>
-                    <img src={img} />
+                    <img src={img} alt={title} />
                 </div>
 
                 <div>
                     <h1>{title}</h1>
-                    <span>R$ {preco}</span>
+                    <span>{preco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>
                 </div>
-            </a>
+            </Link>
         </div>
     );
 }

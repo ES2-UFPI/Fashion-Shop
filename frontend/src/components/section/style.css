@@ -22,12 +22,27 @@
     padding: .5rem;
     font-weight: 700;
     text-transform: uppercase;
+    border-radius: 3px;
 }
 
 .section-container-products {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin: 1rem 0;
+    gap: .25rem;
+}
+
+@media(max-width: 800px) {
+    .title-section {
+        font-size: 1.2rem;
+    }
+}
+
+@media(max-width: 475px) {
+    .section-container-products {
+        flex-direction: column;
+    }
 }

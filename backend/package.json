@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "start-dev": "nodemon ."
+    "start-dev": "nodemon .",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "eslint": "^8.12.0",
     "eslint-config-google": "^0.14.0",
+    "jest": "^28.0.3",
     "nodemon": "^2.0.15"
   }
 }
