@@ -1,9 +1,17 @@
-import Button from '../../components/Button';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import Input from '../../components/Input';
 
 import './styles.css';
+import '../../components/Input/styles.css'
+import '../../components/Button/styles.css'
 
 function Register() {
+
+  const enviarDados = () => {
+
+  }
+
   return (
     <div className="register-container">
       <div className="register-wrapper">
@@ -17,10 +25,10 @@ function Register() {
           <Input type="password" id="password" name="password" placeholder="Senha" />
           <Input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmar Senha" />
 
-          <Button>Criar Conta</Button>
+          <button className='button-generic'>Criar conta</button>
 
-          <a href="#">Já possui conta? Faça o login</a>
-          <a href="#">Página inicial</a>
+          <Link to="/login">Já possui conta? Faça o login</Link>
+          <Link to="/">Página inicial</Link>
         </form>
 
       </div>

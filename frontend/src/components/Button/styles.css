@@ -1,7 +1,8 @@
-button {
-  width: 40%;
+.button-generic {
+  width: 45%;
+  min-width: 90px;
   border: none;
-  padding: .75rem 1.25rem;
+  padding: .75rem 1.5rem;
   background-color: teal;
   color: white;
   cursor: pointer;
@@ -11,6 +12,12 @@ button {
   letter-spacing: 1px;
 }
 
-button:hover {
+.button-generic:hover {
   background-color: hsl(180, 80%, 40%);
+}
+
+@media(max-width: 625px) {
+  .button-generic {
+    width: 100%;
+  }
 }

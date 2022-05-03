@@ -1,5 +1,4 @@
 .banner-container {
-    background-color: aqua;
     height: 30rem;
     width: 100%;
 
@@ -33,19 +32,12 @@
     position: relative;
 }
 
-.banner-container img {
-    width: 100%;
-    object-fit: cover;
-    height: 400px;
-    border-radius: 10px;
-}
-
 .banner-foto-esquerda div,
 .banner-foto-centro div,
 .banner-foto-direita div {
     background-color: black;
     position: absolute;
-    top: calc(100% - 28.39px);
+    top: calc(100% - 37.5px);
     padding: 5px;
 }
 
@@ -53,4 +45,116 @@
 .banner-foto-centro span,
 .banner-foto-direita span {
     color: aliceblue;
+}
+
+.banner-foto-esquerda:hover,
+.banner-foto-centro:hover,
+.banner-foto-direita:hover {
+    transform: scale(1.15, 1.15);
+}
+
+@media(max-width: 1250px) {
+    .banner-container {
+        height: 27.5rem;
+    }
+
+    .banner-foto-esquerda,
+    .banner-foto-direita {
+        width: 250px;
+        height: 350px;
+    }
+
+    .banner-foto-centro {
+        width: 300px;
+        height: 350px;
+    }
+}
+
+@media(max-width: 950px) {
+    .banner-container {
+        height: 25rem;
+    }
+
+    .banner-foto-esquerda,
+    .banner-foto-direita {
+        width: 200px;
+        height: 300px;
+    }
+
+    .banner-foto-centro {
+        width: 250px;
+        height: 300px;
+    }
+
+    .banner-container img {
+        height: 300px;
+    }
+}
+
+@media(max-width: 775px) {
+    .banner-container {
+        height: 22.5rem;
+    }
+
+    .banner-foto-esquerda,
+    .banner-foto-direita {
+        width: 150px;
+        height: 250px;
+    }
+
+    .banner-foto-centro {
+        width: 200px;
+        height: 250px;
+    }
+
+    .banner-container img {
+        height: 250px;
+    }
+}
+
+@media(max-width: 600px) {
+    .banner-container {
+        height: 20rem;
+    }
+
+    .banner-foto-esquerda,
+    .banner-foto-direita {
+        width: 125px;
+        height: 225px;
+    }
+
+    .banner-foto-centro {
+        width: 175px;
+        height: 225px;
+    }
+
+    .banner-container img {
+        height: 225px;
+    }
+
+    .banner-foto-esquerda div,
+    .banner-foto-centro div,
+    .banner-foto-direita div {
+        font-size: .8rem;
+        top: calc(100% - 25px);
+    }
+
+}
+
+@media(max-width: 525px) {
+
+    .banner-foto-direita,
+    .banner-foto-esquerda {
+        display: none;
+    }
+
+    .banner-foto-centro {
+        margin: 0 auto;
+        width: 225px;
+        height: 275px;
+    }
+
+    .banner-container img {
+        height: 275px;
+    }
 }
