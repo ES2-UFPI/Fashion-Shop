@@ -1,6 +1,6 @@
 export const productMemoryDatabase = [
     {
-        id: 'afwrgr-etheth-etheth-teheth',
+        id: '1',
         name: 'jeans bonito',
         description: 'Um belo jeans para dias frios',
         value: 20.55,
@@ -10,7 +10,7 @@ export const productMemoryDatabase = [
         colors: ['blue', 'green', 'gray'],
     },
     {
-        id: 'afwrgr-etheth-etheth-teheth',
+        id: '2',
         name: 'jeans esportivo',
         description: 'Um jeans para se aventurar',
         value: 20.55,

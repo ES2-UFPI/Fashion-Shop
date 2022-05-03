@@ -1,4 +1,4 @@
-import { getProductsModel, postProductModel } from '../../model/products.model.js';
+import { getProductsModel, postProductModel, getProductModel } from '../../model/products.model.js';
 
 export function getProductsController() {
     return getProductsModel();

@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
 import { routes } from './src/view/routes.js';
 import { validTokenAdmin, validToken } from './src/utils/auth/authValidation.js';
 
@@ -9,15 +9,15 @@ dotenv.config();
 const PORT = process.env.PORT;
 const app = express();
 
-mongoose
-.connect(process.env.MONGO_URL)
-.then(() => console.log("Conexão com o DB bem sucedida!"))
-.catch((err) => {
-    console.log(err);
-});
+// mongoose
+// .connect(process.env.MONGO_URL)
+// .then(() => console.log("Conexão com o DB bem sucedida!"))
+// .catch((err) => {
+//     console.log(err);
+// });
 
 app.listen(PORT, () => {
-    console.log("Backend server is running!");
+    console.log('Backend server is running on ' + PORT + '!🥰🥰');
 });
 
 app.use(bodyParser.json());
