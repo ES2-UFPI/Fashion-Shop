@@ -72,7 +72,9 @@ function Product() {
           value: preco,
           qtd: qtdProduto
         }
-      ))
+      ));
+
+      alert("Produto adicionado ao Carrinho");
     } else {
       setCheckSize(false);
     }
@@ -111,7 +113,7 @@ function Product() {
             </div>
 
             <div className='produto-preco'>
-              <span>R$ {preco / 100}</span>
+              <span>R$ {(preco / 100).toFixed(2)}</span>
             </div>
 
             <div className='produto-buttons'>

@@ -41,7 +41,7 @@ function CartProduct({ id, img, name, size, value, qtd }) {
 
 
                 <div className='container-preco-carrinho'>
-                    <span>R$ {value / 100}</span>
+                    <span>R$ {(value / 100).toFixed(2)}</span>
                 </div>
 
             </div>

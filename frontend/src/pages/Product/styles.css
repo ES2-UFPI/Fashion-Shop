@@ -92,6 +92,10 @@
     cursor: pointer;
 }
 
+.pb-btn input:hover {
+    font-size: 2rem;
+}
+
 .pb-cen {
     display: flex;
     justify-content: center;
@@ -100,6 +104,10 @@
     height: 60px;
     background-color: lightgray;
     font-size: 1.8rem;
+}
+
+.pb-container-dir input:hover {
+    opacity: .8;
 }
 
 .alert {

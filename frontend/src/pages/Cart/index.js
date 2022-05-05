@@ -47,7 +47,7 @@ function Cart() {
 
           </div>
           <div>
-            <CartInfo total={valorTotalCarrinho} />
+            <CartInfo total={valorTotalCarrinho.toFixed(2)} />
           </div>
         </div>
 
