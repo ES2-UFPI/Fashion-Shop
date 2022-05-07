@@ -35,6 +35,12 @@
     font-size: 2rem;
     font-weight: bold;
 }
+.delet-item-cart-button{
+    padding: 10px;
+    background-color: brown;
+    color: aliceblue;
+    margin-top: 20px;
+}
 
 .cic p {
     font-size: 1.5rem;

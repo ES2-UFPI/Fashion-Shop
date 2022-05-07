@@ -40,7 +40,7 @@ function CartProduct({ id, img, name, size, value, qtd }) {
                         <span>R$ {(value / 100).toFixed(2)}</span>
                     </div>
                     <div>
-                        <button type='button' onClick={()=>excluirItemCarrinho()}>Excluir do Carrinho</button>
+                        <button className='delet-item-cart-button' type='button' onClick={()=>excluirItemCarrinho()}>Excluir do Carrinho</button>
                     </div>
                 </div>
 
