@@ -1,18 +1,14 @@
-import { useState } from 'react';
+
+import { useDispatch } from 'react-redux';
+import { removeItem } from '../../redux/carrinhoSlice';
 
 import './styles.css';
 
 function CartProduct({ id, img, name, size, value, qtd }) {
+    const dispatch = useDispatch();
 
-    const [quantProduct, setQuantProduct] = useState(qtd);
-
-    const incrementQuantCart = () => {
-        setQuantProduct((prevQuant) => prevQuant + 1);
-    }
-
-    const decrementQuantCart = () => {
-        if (quantProduct <= 1) return;
-        setQuantProduct((prevQuant) => prevQuant - 1);
+    const excluirItemCarrinho = () => {
+        dispatch(removeItem(id))
     }
 
     return (
@@ -39,9 +35,13 @@ function CartProduct({ id, img, name, size, value, qtd }) {
                     </div>
                 </div>
 
-
-                <div className='container-preco-carrinho'>
-                    <span>R$ {(value / 100).toFixed(2)}</span>
+                <div className='container-cart-price-exc-button'>
+                    <div className='container-preco-carrinho'>
+                        <span>R$ {(value / 100).toFixed(2)}</span>
+                    </div>
+                    <div>
+                        <button className='delet-item-cart-button' type='button' onClick={()=>excluirItemCarrinho()}>Excluir do Carrinho</button>
+                    </div>
                 </div>
 
             </div>
