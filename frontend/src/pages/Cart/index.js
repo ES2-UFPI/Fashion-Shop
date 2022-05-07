@@ -19,7 +19,7 @@ function Cart() {
 
   useEffect(() => {
     setValorTotalCarrinho(array_valores.reduce((previousValue, currentValue) => previousValue + currentValue, initialCartValue));
-  }, [valorTotalCarrinho]);
+  }, [carrinho.length]);
 
   return (
     <>
