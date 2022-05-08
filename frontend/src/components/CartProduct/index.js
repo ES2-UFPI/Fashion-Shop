@@ -1,6 +1,7 @@
-
 import { useDispatch } from 'react-redux';
 import { removeItem } from '../../redux/carrinhoSlice';
+
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import './styles.css';
 
@@ -15,7 +16,7 @@ function CartProduct({ id, img, name, size, value, qtd }) {
         <div className='container-carrinho-box'>
             <div className="c-1">
                 <div className='div-image-carrinho'>
-                    <img src={img} />
+                    <img src={img} alt={name} />
                 </div>
             </div>
 
@@ -39,8 +40,12 @@ function CartProduct({ id, img, name, size, value, qtd }) {
                     <div className='container-preco-carrinho'>
                         <span>R$ {(value / 100).toFixed(2)}</span>
                     </div>
-                    <div>
-                        <button className='delet-item-cart-button' type='button' onClick={()=>excluirItemCarrinho()}>Excluir do Carrinho</button>
+
+                    <div className="delete-item-cart-button">
+                        <button
+                            className='delete-item-cart-button'
+                            type='button'
+                            onClick={() => excluirItemCarrinho()}><DeleteIcon fontSize='large' /></button>
                     </div>
                 </div>
 

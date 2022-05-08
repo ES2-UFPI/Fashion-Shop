@@ -24,22 +24,30 @@
     width: 100%;
     margin-left: 1.25rem;
 }
-.container-cart-price-exc-button{
+
+.container-cart-price-exc-button {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
+    margin-top: 3rem;
 }
 
 .container-preco-carrinho span {
     font-size: 2rem;
     font-weight: bold;
 }
-.delet-item-cart-button{
-    padding: 10px;
+
+.delete-item-cart-button {
+    padding: .5rem;
+    margin: .5rem auto 0 auto;
+}
+
+.delete-item-cart-button button {
     background-color: brown;
     color: aliceblue;
-    margin-top: 20px;
+    border-radius: 7px;
+    border: none;
 }
 
 .cic p {
@@ -87,6 +95,11 @@ br {
     .container-carrinho-box {
         margin: 1rem auto;
         justify-content: space-between;
+    }
+
+    .c-2 {
+        align-items: flex-start;
+        margin-left: 4rem;
     }
 }
 
