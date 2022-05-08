@@ -126,19 +126,17 @@ const productsList = [
   },
   {
     "id": "9",
-    "name": "Jeans bonito",
-    "description": "Um belo jeans para dias frios",
-    "value": 20.55,
+    "name": "Vestidos variados",
+    "description": "Vestidos de diferentes cores",
+    "value": 49.99,
     "img": [
-      "https://cdn.pixabay.com/photo/2018/10/11/17/27/male-3740359_1280.jpg"
+      "https://images.pexels.com/photos/1078958/pexels-photo-1078958.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
     ],
-    "sex": "man",
+    "sex": "woman",
     "sizes": [
-      "pp",
       "p",
       "m",
-      "g",
-      "gg"
+      "g"
     ]
   },
 ];
