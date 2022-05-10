@@ -14,7 +14,6 @@ export function authSingInModel(data) {
     const response = databaseInMemory()
         .getUsers()
         .filter((item) => item.email == data.email);
-    console.log(response.length == 0);
     if (response.length == 0) {
         const user = { name: data.name, email: data.email, pwd: data.pwd, admin: false };
         databaseInMemory()

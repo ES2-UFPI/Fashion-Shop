@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import SearchBar from '../../components/SearchBar';
 import SearchResults from "../../components/SearchResults";
 
-import productsList from "../../products";
+import { getProducts } from "../../products";
 
 import './styles.css';
 
@@ -17,7 +17,7 @@ function Search() {
 
   useEffect(() => {
     const newSearch = search.trim().toUpperCase();
-    setFilteredProducts(productsList.filter(product => product.name.trim().toUpperCase().includes(newSearch)));
+    setFilteredProducts(getProducts().filter(product => product.name.trim().toUpperCase().includes(newSearch)));
   }, [search]);
 
   console.log(filteredProducts);

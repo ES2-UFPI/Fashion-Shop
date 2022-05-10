@@ -2,7 +2,7 @@ import BannerImage from '../BannerImage';
 
 import './style.css';
 
-import ProductsList from '../../products.js';
+import { getProducts } from '../../products.js';
 
 function Banner() {
     return (
@@ -10,28 +10,28 @@ function Banner() {
             <div className='banner-container-centro'>
                 <div className='banner-foto-esquerda'>
                     <BannerImage
-                        id={ProductsList[0].id}
-                        img={ProductsList[0].img}
-                        description={ProductsList[0].description}
-                        name={ProductsList[0].name}
+                        id={getProducts()[0].id}
+                        img={getProducts()[0].img}
+                        description={getProducts()[0].description}
+                        name={getProducts()[0].name}
                     />
                 </div>
 
                 <div className='banner-foto-centro'>
                     <BannerImage
-                        id={ProductsList[1].id}
-                        img={ProductsList[1].img}
-                        description={ProductsList[1].description}
-                        name={ProductsList[1].name}
+                        id={getProducts()[1].id}
+                        img={getProducts()[1].img}
+                        description={getProducts()[1].description}
+                        name={getProducts()[1].name}
                     />
                 </div>
 
                 <div className='banner-foto-direita'>
                     <BannerImage
-                        id={ProductsList[2].id}
-                        img={ProductsList[2].img}
-                        description={ProductsList[2].description}
-                        name={ProductsList[2].name}
+                        id={getProducts()[2].id}
+                        img={getProducts()[2].img}
+                        description={getProducts()[2].description}
+                        name={getProducts()[2].name}
                     />
                 </div>
             </div>
