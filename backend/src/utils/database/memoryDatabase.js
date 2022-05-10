@@ -39,8 +39,11 @@ export function databaseInMemory() {
         getOrder: (id) => {
             return orders.find((item) => item.pedidos.id == id);
         },
-        //postOrder: (userId, order) => {
-        //}
+        postOrder: (userId, order) => {
+            const ordersIndex = orders.findIndex((item) => item.userId == userId);
+            const newOrder =  { userId: userId, pedidos: [...orders[ordersIndex].pedidos, order] };
+            orders[ordersIndex] = newOrder;
+        }
     }
     );
 }
