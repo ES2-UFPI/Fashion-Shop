@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 // import mongoose from 'mongoose';
 import { routes } from './src/view/routes.js';
 import { validTokenAdmin, validToken } from './src/utils/auth/authValidation.js';
+import WebSocket from 'ws';
 import cors from 'cors';
 dotenv.config();
 const PORT = process.env.PORT;
@@ -15,7 +16,11 @@ const app = express();
 // .catch((err) => {
 //     console.log(err);
 // });
+const webSocketServer = WebSocket.Server;
+const wss = new webSocketServer({ path: '/messages' });
+wss.on('connection', () => {
 
+});
 app.listen(PORT, () => {
     console.log('Backend server is running on ' + PORT + '!🥰🥰');
 });
