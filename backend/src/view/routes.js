@@ -15,15 +15,23 @@ const routeList = {
             main: '/app/cart',
             cartById: '/app/cart/:id',
         },
+        orders: {
+            main: '/app/orders',
+            ordersById: '/app/orders/:id',
+        },
     },
     adminRoute: {
         products: {
             main: '/admin/products',
             productsById: '/admin/products/:id',
         },
-        cart: {
-            main: '/admin/cart',
-            cartById: '/admin/cart/:id',
+        carts: {
+            main: '/admin/carts',
+            cartById: '/admin/carts/:id',
+        },
+        orders: {
+            main: '/admin/orders',
+            ordersById: '/admin/orders/:id',
         },
     },
 };

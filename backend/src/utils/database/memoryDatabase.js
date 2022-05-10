@@ -1,8 +1,10 @@
-import { userMemory, productMemory, cartMemory } from './databasesMemory.js';
+import { userMemory, productMemory, cartMemory, orderMemory } from './databasesMemory.js';
 let users = userMemory;
 let products = productMemory;
 const cart = cartMemory;
+const orders = orderMemory;
 import crypto from 'crypto';
+
 export function databaseInMemory() {
     return ({
         getUsers: () => {
@@ -38,6 +40,14 @@ export function databaseInMemory() {
             const newCart = { userId: userId, products: [...cart[cartIndex].products, product] };
             cart[cartIndex] = newCart;
         },
+        getOrders: (userId) => {
+            return orders.find((item) => item.userId == userId);
+        },
+        getOrder: (id) => {
+            return orders.find((item) => item.pedidos.id == id);
+        },
+        //postOrder: (userId, order) => {
+        //}
     }
     );
 }
