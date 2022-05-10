@@ -1,5 +1,5 @@
 import ProductBox from '../ProductBox';
-import productsList from '../../products';
+import { getProducts } from '../../products';
 import './style.css';
 
 function Section({ titulo }) {
@@ -11,25 +11,25 @@ function Section({ titulo }) {
                 </div>
 
                 <div className='section-container-products'>
-                    <ProductBox img={productsList[0].img}
-                        title={productsList[0].name}
-                        preco={productsList[0].value}
-                        id={productsList[0].id} />
+                    <ProductBox img={getProducts()[0].img}
+                        title={getProducts()[0].name}
+                        preco={getProducts()[0].value}
+                        id={getProducts()[0].id} />
 
-                    <ProductBox img={productsList[1].img}
-                        title={productsList[1].name}
-                        preco={productsList[1].value}
-                        id={productsList[1].id} />
+                    <ProductBox img={getProducts()[1].img}
+                        title={getProducts()[1].name}
+                        preco={getProducts()[1].value}
+                        id={getProducts()[1].id} />
 
-                    <ProductBox img={productsList[2].img}
-                        title={productsList[2].name}
-                        preco={productsList[2].value}
-                        id={productsList[2].id} />
+                    <ProductBox img={getProducts()[2].img}
+                        title={getProducts()[2].name}
+                        preco={getProducts()[2].value}
+                        id={getProducts()[2].id} />
 
-                    <ProductBox img={productsList[3].img}
-                        title={productsList[3].name}
-                        preco={productsList[3].value}
-                        id={productsList[3].id} />
+                    <ProductBox img={getProducts()[3].img}
+                        title={getProducts()[3].name}
+                        preco={getProducts()[3].value}
+                        id={getProducts()[3].id} />
 
                 </div>
             </div>

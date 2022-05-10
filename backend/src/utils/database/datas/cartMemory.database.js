@@ -1,6 +1,6 @@
 export const cartMemoryDatabase = [
     {
-        products: [
+        cart: [
             {
                 id: '1',
                 name: 'jeans bonito',
