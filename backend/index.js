@@ -18,8 +18,8 @@ const app = express();
 // });
 const webSocketServer = WebSocket.Server;
 const wss = new webSocketServer({ path: '/messages' });
-wss.on('connection', () => {
-
+wss.on('connection', (value) => {
+    console.log(value);
 });
 app.listen(PORT, () => {
     console.log('Backend server is running on ' + PORT + '!🥰🥰');
