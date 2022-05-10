@@ -1,7 +1,7 @@
 import axios from 'axios'
 const api = axios
-// api.defaults.baseURL = "https://fashion-shop-backend.herokuapp.com"
-api.defaults.baseURL = "http://localhost:5001"
+api.defaults.baseURL = "https://fashion-shop-backend.herokuapp.com"
+// api.defaults.baseURL = "http://localhost:5001"
 // api.defaults.headers = {
 //     "X-Powered-By": "Express",
 //     "Access-Control-Allow-Origin": "*",
@@ -14,8 +14,8 @@ api.defaults.baseURL = "http://localhost:5001"
 //     "Keep-Alive": "timeout=5"
 // }
 api.defaults.headers["Authorization"] = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hdGhldXMyQGVtYWlsLmNvbSIsInB3ZCI6IjRhODgwOGFlOWQxMDc4YTg1ODQ0OGMwNzczYWRjZWYzMjk3YmZmZTc1ZDZhZjk1YzU0OThmODQ2YTMzNjA0MjgiLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTY1MTUzNDU4NSwiZXhwIjoxNzUxNTM0NTg1fQ.niZZ9s4UqqxnZFAINQLjnLVaONY5Tad5uHcK9IiAvY4"
-// const token = localStorage.getItem("fashion-shop-authorization")
-// if (token != null) {
-//     api.defaults.headers["authorization"] = token
-// }
+const token = localStorage.getItem("fashion-shop-authorization")
+if (token != null) {
+    api.defaults.headers["authorization"] = token
+}
 export default api; 
