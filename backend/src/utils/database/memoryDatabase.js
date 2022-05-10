@@ -30,7 +30,7 @@ export function databaseInMemory() {
         },
         postCart: (userId, product) => {
             const cartIndex = cart.findIndex((item) => item.userId == userId);
-            const newCart = { userId: userId, products: [...cart[cartIndex].products, product] };
+            const newCart = { userId: userId, cart: [...cart[cartIndex].cart, product] };
             cart[cartIndex] = newCart;
         },
         getOrders: (userId) => {
