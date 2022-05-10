@@ -4,14 +4,14 @@ import bodyParser from 'body-parser';
 // import mongoose from 'mongoose';
 import { routes } from './src/view/routes.js';
 import { validTokenAdmin, validToken } from './src/utils/auth/authValidation.js';
-
+import cors from 'cors';
 dotenv.config();
 const PORT = process.env.PORT;
 const app = express();
 
 // mongoose
 // .connect(process.env.MONGO_URL)
-// .then(() => console.log("Conexão com o DB bem sucedida!"))
+// .then(() => consoles.log("Conexão com o DB bem sucedida!"))
 // .catch((err) => {
 //     console.log(err);
 // });
@@ -19,7 +19,7 @@ const app = express();
 app.listen(PORT, () => {
     console.log('Backend server is running on ' + PORT + '!🥰🥰');
 });
-
+app.use(cors());
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
@@ -32,7 +32,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/app', (req, res, next) => {
-    const validation = validToken(req.headers?.authorization);
+    const validation = validToken(req.headers?.authorization || req.headers?.Authorization);
     if (!validation) {
         res.status(401).send('Access denied');
     } else {

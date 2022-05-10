@@ -34,17 +34,17 @@ function App() {
         <Route path='masculino' element={<FemMasc opt='masculino' />} />
         <Route path='feminino' element={<FemMasc opt='feminino' />} />
         <Route path='carrinho' element={<Cart />} />
-        
-          <Route path='admin' element={isAdmin ? <Admin />: <Login/>} >
-            <Route path='usuarios' element={<UserAdm />} />
-            <Route path='produtos' element={<AdmProducts />}>
-              <Route path='cadastrar' element={<NewProduct />} />
-              <Route path='listar' element={<ProductsList />} />
-            </Route>
-            <Route path='transacoes' element={<Transations />} />
-            <Route path='mensagens' element={<Messages />} />
+
+        <Route path='admin' element={isAdmin ? <Admin /> : <Login />} >
+          <Route path='usuarios' element={<UserAdm />} />
+          <Route path='produtos' element={<AdmProducts />}>
+            <Route path='cadastrar' element={<NewProduct />} />
+            <Route path='listar' element={<ProductsList />} />
           </Route>
-          
+          <Route path='transacoes' element={<Transations />} />
+          <Route path='mensagens' element={<Messages />} />
+        </Route>
+
       </Routes>
     </div>
   );

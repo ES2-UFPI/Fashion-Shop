@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 import BarraMascFem from "../../components/BarraMascFem";
 import SearchResults from "../../components/SearchResults";
 
-import productsList from '../../products';
+import { getProducts } from '../../products';
 
 import './styles.css';
 
@@ -14,9 +14,9 @@ function FemMasc({ opt }) {
 
     useEffect(() => {
         if (opt === 'masculino') {
-            setFilteredProducts(productsList.filter(product => product.sex === 'man'));
+            setFilteredProducts(getProducts().filter(product => product.sex === 'man'));
         } else if (opt === 'feminino') {
-            setFilteredProducts(productsList.filter(product => product.sex === 'woman'));
+            setFilteredProducts(getProducts().filter(product => product.sex === 'woman'));
         }
     }, [opt]);
 
