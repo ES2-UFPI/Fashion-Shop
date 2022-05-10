@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Input from '../../components/Input';
 
 import './styles.css';
@@ -8,20 +8,15 @@ import '../../components/Button/styles.css'
 import api from '../../api';
 
 function Register() {
-
-  const [dados, setDados] = useState({})
+  const [dados, setDados] = useState({});
 
   const handle = (event) => {
-    dados[event.target.name] = event.target.value
-    setDados(dados)
-    console.log(dados)
+    dados[event.target.name] = event.target.value;
+    setDados(dados);
   }
 
-
   const enviarDados = async () => {
-    const token = await api.post("/auth/singIn", dados)
-    console.log(token)
-
+    const token = await api.post("/auth/singIn", dados);
   }
 
   return (
