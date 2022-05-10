@@ -3,13 +3,14 @@ import { useParams } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import Select from 'react-select';
 
-import { addItem } from '../../redux/carrinhoSlice';
+import { addItem, removeItem } from '../../redux/carrinhoSlice';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-import productsList from '../../products';
+import { getProducts } from '../../products';
 import './styles.css';
+import api from '../../api';
 
 function Product() {
   const [qtdProduto, setQtdProduto] = useState(1);
@@ -23,17 +24,21 @@ function Product() {
   let { idProduto } = useParams(); //usado para pegar o produto baseado no id passado como parametro
 
   useEffect(() => {
-    const foundProduct = productsList.find(item => item.id === idProduto);
-    setPreco(Number(foundProduct.value) * 100);
-    const sizeOptions = foundProduct.sizes.map((tamanho) => (
-      {
-        value: tamanho,
-        label: tamanho
+    getProducts().find((item) => {
+      if (item.id === idProduto) {
+        setPreco(Number(item.value) * 100);
+        const sizeOptions = item.sizes.map((tamanho) => (
+          {
+            value: tamanho,
+            label: tamanho
+          }
+        )
+        )
+        setOpcoesTamanho(sizeOptions);
+        setProdutoData(item);
       }
-    ));
-    setOpcoesTamanho(sizeOptions);
-    setProdutoData(foundProduct);
-  }, [idProduto]);
+    })
+  }, [])
 
   const somaPrecoComEleMesmo = () => {
     let soma = Number(preco + Number(produtoData.value) * 100);
@@ -59,18 +64,18 @@ function Product() {
   const addItemCarrinho = () => {
 
     if (selectedOption !== null) {
+      const payload = {
+        id: produtoData.id,
+        img: produtoData.img[0],
+        name: produtoData.name,
+        tamanho: selectedOption,
+        value: preco,
+        qtd: qtdProduto
+      }
       dispatch(addItem(
-        {
-          id: produtoData.id,
-          img: produtoData.img[0],
-          name: produtoData.name,
-          tamanho: selectedOption,
-          value: preco,
-          qtd: qtdProduto
-        }
+        payload
       ));
-
-      alert("Produto adicionado ao Carrinho");
+      api.post("/app/cart", payload)
     } else {
       setCheckSize(false);
     }
@@ -85,7 +90,7 @@ function Product() {
 
         <div className='centro-produto-container'>
           <div className='produto-image-container'>
-            <img src={produtoData.img} alt={produtoData.description} />
+            <img src={produtoData.img} />
           </div>
 
           <div className='produto-infos'>

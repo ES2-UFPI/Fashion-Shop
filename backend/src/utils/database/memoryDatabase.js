@@ -13,14 +13,7 @@ export function databaseInMemory() {
             return ({ msg: 'updated with success' });
         },
         getProducts: () => {
-            return products.map((item) => (
-                {
-                    id: item.id,
-                    name: item.name,
-                    description: item.description,
-                    img: item.img,
-                    valor: item.value,
-                }));
+            return products;
         },
         getProduct: (id) => {
             return products.find((item) => item.id == id);
