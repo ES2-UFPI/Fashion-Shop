@@ -13,7 +13,6 @@ api.defaults.baseURL = "https://fashion-shop-backend.herokuapp.com"
 //     "Connection": "keep-alive",
 //     "Keep-Alive": "timeout=5"
 // }
-api.defaults.headers["Authorization"] = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hdGhldXMyQGVtYWlsLmNvbSIsInB3ZCI6IjRhODgwOGFlOWQxMDc4YTg1ODQ0OGMwNzczYWRjZWYzMjk3YmZmZTc1ZDZhZjk1YzU0OThmODQ2YTMzNjA0MjgiLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTY1MTUzNDU4NSwiZXhwIjoxNzUxNTM0NTg1fQ.niZZ9s4UqqxnZFAINQLjnLVaONY5Tad5uHcK9IiAvY4"
 const token = localStorage.getItem("fashion-shop-authorization")
 if (token != null) {
     api.defaults.headers["authorization"] = token
