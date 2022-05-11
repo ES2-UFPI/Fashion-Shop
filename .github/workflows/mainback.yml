@@ -21,6 +21,7 @@ jobs:
    - run: cd backend
    - name: Install Packages
      run: npm install
+   - run: cd backend
    - name: Build project
      run: npm run start
    - name: Upload production-ready build files
