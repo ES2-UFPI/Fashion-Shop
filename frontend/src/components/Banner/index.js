@@ -10,15 +10,6 @@ function Banner() {
             <div className='banner-container-centro'>
                 <div className='banner-foto-esquerda'>
                     <BannerImage
-                        id={getProducts()[0].id}
-                        img={getProducts()[0].img}
-                        description={getProducts()[0].description}
-                        name={getProducts()[0].name}
-                    />
-                </div>
-
-                <div className='banner-foto-centro'>
-                    <BannerImage
                         id={getProducts()[1].id}
                         img={getProducts()[1].img}
                         description={getProducts()[1].description}
@@ -26,12 +17,21 @@ function Banner() {
                     />
                 </div>
 
+                <div className='banner-foto-centro'>
+                    <BannerImage
+                        id={getProducts()[4].id}
+                        img={getProducts()[4].img}
+                        description={getProducts()[4].description}
+                        name={getProducts()[4].name}
+                    />
+                </div>
+
                 <div className='banner-foto-direita'>
                     <BannerImage
-                        id={getProducts()[2].id}
-                        img={getProducts()[2].img}
-                        description={getProducts()[2].description}
-                        name={getProducts()[2].name}
+                        id={getProducts()[7].id}
+                        img={getProducts()[7].img}
+                        description={getProducts()[7].description}
+                        name={getProducts()[7].name}
                     />
                 </div>
             </div>
