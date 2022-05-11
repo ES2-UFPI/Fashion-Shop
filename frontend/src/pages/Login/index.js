@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 import Button from '../../components/Button';
@@ -10,30 +10,32 @@ import './styles.css';
 import api from '../../api';
 
 function Login() {
-
   const [dados, setDados] = useState({ email: '', senha: '' });
-  const [erro, setErro] = useState(false)
+  const [erro, setErro] = useState(false);
+  const navigate = useNavigate();
+
   const handleEmail = (event) => {
-    dados.email = event.target.value
-    setDados(dados)
+    dados.email = event.target.value;
+    setDados(dados);
   }
 
   const handleSenha = (event) => {
-    dados.senha = event.target.value
-    setDados(dados)
+    dados.senha = event.target.value;
+    setDados(dados);
   }
 
   const handleClick = async (event, dados) => {
     event.preventDefault();
     console.log(event, dados);
-    const { token } = await (await api.post("/auth/logIn", { email: dados.email, pwd: dados.senha })).data
+    const { token } = await (await api.post("/auth/logIn", { email: dados.email, pwd: dados.senha })).data;
+
     if (token == null) {
-      setErro(true)
+      setErro(true);
     } else {
-      api.defaults.headers["authorization"] = token
-      localStorage.setItem("fashion-shop-authorization", token)
+      api.defaults.headers["authorization"] = token;
+      localStorage.setItem("fashion-shop-authorization", token);
+      navigate('/');
     }
-    // fetch(url, dados)
   }
 
   return (
@@ -43,7 +45,7 @@ function Login() {
         <h2 className="title">Login</h2>
 
         <form className="form">
-          <input className='input-generic' type="text" id="username" name="username" placeholder="Nome de usuário" onChange={(event) => handleEmail(event)} />
+          <input className='input-generic' type="email" id="email" name="email" placeholder="Email" onChange={(event) => handleEmail(event)} />
           <input className='input-generic' type="password" id="password" name="password" placeholder="Senha" onChange={(event) => handleSenha(event)} />
 
           {erro &&

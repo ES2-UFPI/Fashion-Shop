@@ -17,4 +17,4 @@ const token = localStorage.getItem("fashion-shop-authorization")
 if (token != null) {
     api.defaults.headers["authorization"] = token
 }
-export default api; 
+export default api;

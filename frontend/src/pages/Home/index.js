@@ -1,4 +1,8 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { getProducts, setProducts } from '../../products';
+import api from '../../api';
 
 import Banner from '../../components/Banner';
 import Header from '../../components/Header';
@@ -8,27 +12,30 @@ import Section from '../../components/Section';
 import Footer from '../../components/Footer';
 
 import './styles.css';
-import { getProducts, setProducts } from '../../products';
-import api from '../../api';
 
 function Home() {
-  useEffect(() => {
-    // recupera o produtos pela api usando fetch
-  }, []);
-  const [product, setProduct] = useState(getProducts());
-  async function getProductsApi() {
-    const products = await (await api.get("/app/products"))?.data
-    console.log(products)
-    setProducts(products)
+  const navigate = useNavigate();
 
-    setProduct(products)
+  useEffect(() => {
+    if (api.defaults.headers['authorization'] === undefined)
+      navigate('/registrar');
+  }, [navigate]);
+
+  const [product, setProduct] = useState(getProducts());
+
+  async function getProductsApi() {
+    const products = await (await api.get("/app/products"))?.data;
+
+    setProducts(products);
+    setProduct(products);
   }
+
   useEffect(() => {
     if (!!!product.length) {
-      getProductsApi()
+      getProductsApi();
     }
-  }, [])
-  console.log(product)
+  }, [product.length]);
+
   return (
     product.length ?
       <div className="home-container">
