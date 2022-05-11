@@ -1,0 +1,50 @@
+name: Build & deploy to Heroku
+
+on:
+ push:
+   branches:
+     - main
+
+jobs:
+ build:
+   name: Build
+   runs-on: ubuntu-latest
+   strategy:
+     matrix:
+       node-version: [14.x]
+   steps:
+   - uses: actions/checkout@v2
+   - name: Use Node.js ${{ matrix.node-version }}
+     uses: actions/setup-node@v1
+     with:
+       node-version: ${{ matrix.node-version }}
+   - run: cd backend
+   - name: Install Packages
+     run: npm install
+   - name: Build project
+     run: npm run start
+   - name: Upload production-ready build files
+     uses: actions/upload-artifact@v2
+     with:
+       name: production-files
+       path: ./build
+
+ deploy:
+   name: Deploy para o Heroku
+   needs: build
+   runs-on: ubuntu-latest
+   if: github.ref == 'refs/heads/main'
+
+   steps:
+   - name: Download artifact
+     uses: actions/download-artifact@v2
+     with:
+       name: production-files
+       path: ./build
+       
+   - uses: actions/checkout@v2
+   - uses: akhileshns/heroku-deploy@v3.12.12
+     with:
+       heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+       heroku_app_name: "fashion-shop-backend" 
+       heroku_email: "emanuelcascone@gmail.com"
