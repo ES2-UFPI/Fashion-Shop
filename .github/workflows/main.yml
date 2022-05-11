@@ -3,9 +3,9 @@ on:
  push:
    branches:
      - main
- defaults:
-      run:
-        working-directory: frontend
+defaults:
+  run:
+   working-directory: ./frontend
 jobs:
  build:
    name: Build
