@@ -18,12 +18,12 @@ jobs:
      uses: actions/setup-node@v1
      with:
        node-version: ${{ matrix.node-version }}
-   - run: cd backend
    - name: Install Packages
      run: npm install
-   - run: cd backend
+     working-directory: ./backend
    - name: Build project
      run: npm run start
+     working-directory: ./backend
    - name: Upload production-ready build files
      uses: actions/upload-artifact@v2
      with:
