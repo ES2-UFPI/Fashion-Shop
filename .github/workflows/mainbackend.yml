@@ -33,6 +33,9 @@ jobs:
    runs-on: ubuntu-latest
    steps:
    - uses: actions/checkout@v2
+   - name: Add remote origin
+     run: |
+        git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{fashion-shop-backend}}.git
    - uses: akhileshns/heroku-deploy@v3.12.12 
      with:
        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
