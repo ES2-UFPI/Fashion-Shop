@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Fashion-Shop/static/css/main.5aea38fa.css",
+    "main.js": "/Fashion-Shop/static/js/main.6d31cd23.js",
+    "static/media/background-banner.jpg": "/Fashion-Shop/static/media/background-banner.513b2d888435d4b93da6.jpg",
+    "index.html": "/Fashion-Shop/index.html",
+    "main.5aea38fa.css.map": "/Fashion-Shop/static/css/main.5aea38fa.css.map",
+    "main.6d31cd23.js.map": "/Fashion-Shop/static/js/main.6d31cd23.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5aea38fa.css",
+    "static/js/main.6d31cd23.js"
+  ]
+}
