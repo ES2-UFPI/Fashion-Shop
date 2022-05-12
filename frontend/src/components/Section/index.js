@@ -11,6 +11,7 @@ function Section({ titulo }) {
                 </div>
 
                 <div className='section-container-products'>
+                  
                     <ProductBox img={getProducts()[0].img}
                         title={getProducts()[0].name}
                         preco={getProducts()[0].value}
