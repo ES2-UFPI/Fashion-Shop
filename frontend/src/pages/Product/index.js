@@ -28,18 +28,17 @@ function Product() {
 
     setPreco(Number(productFound.value) * 100);
 
-    const sizeOptions = productFound.sizes.map((tamanho) => (
+    const sizeOptions = productFound?.sizes?.map((tamanho) => (
       {
         value: tamanho,
         label: tamanho
       }
-    )
-    );
+    ));
 
-    setOpcoesTamanho(sizeOptions);
-    setProdutoData(productFound);
+    setOpcoesTamanho(sizeOptions || ["s", "m"]);
+    setProdutoData(productFound || []);
 
-  }, [idProduto, productFound, sizeOptions]);
+  }, [idProduto, produtoData, opcoesTamanho]);
 
   const somaPrecoComEleMesmo = () => {
     let soma = Number(preco + Number(produtoData.value) * 100);
