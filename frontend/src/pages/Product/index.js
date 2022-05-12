@@ -26,7 +26,7 @@ function Product() {
   useEffect(() => {
     const productFound = getProducts().find((item) => { item.id === idProduto });
 
-    setPreco(Number(item.value) * 100);
+    setPreco(Number(productFound.value) * 100);
 
     const sizeOptions = productFound.sizes.map((tamanho) => (
       {
@@ -37,7 +37,7 @@ function Product() {
     );
 
     setOpcoesTamanho(sizeOptions);
-    setProdutoData(item);
+    setProdutoData(productFound);
 
   }, [idProduto, productFound, sizeOptions]);
 
