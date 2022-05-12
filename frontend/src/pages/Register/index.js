@@ -17,6 +17,7 @@ function Register() {
 
   const enviarDados = async () => {
     const token = await api.post("/auth/singIn", dados);
+    console.log(token);
   }
 
   return (
