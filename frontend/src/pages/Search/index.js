@@ -14,6 +14,7 @@ function Search() {
   let [filteredProducts, setFilteredProducts] = useState([]);
 
   let search = searchParams.get('search');
+  console.log(setSearchParams);
 
   useEffect(() => {
     const newSearch = search.trim().toUpperCase();

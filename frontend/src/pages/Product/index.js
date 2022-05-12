@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import Select from 'react-select';
 
-import { addItem, removeItem } from '../../redux/carrinhoSlice';
+import { addItem } from '../../redux/carrinhoSlice';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -24,21 +24,22 @@ function Product() {
   let { idProduto } = useParams(); //usado para pegar o produto baseado no id passado como parametro
 
   useEffect(() => {
-    getProducts().find((item) => {
-      if (item.id === idProduto) {
-        setPreco(Number(item.value) * 100);
-        const sizeOptions = item.sizes.map((tamanho) => (
-          {
-            value: tamanho,
-            label: tamanho
-          }
-        )
-        )
-        setOpcoesTamanho(sizeOptions);
-        setProdutoData(item);
+    const productFound = getProducts().find((item) => { item.id === idProduto });
+
+    setPreco(Number(item.value) * 100);
+
+    const sizeOptions = productFound.sizes.map((tamanho) => (
+      {
+        value: tamanho,
+        label: tamanho
       }
-    })
-  }, [])
+    )
+    );
+
+    setOpcoesTamanho(sizeOptions);
+    setProdutoData(item);
+
+  }, [idProduto, productFound, sizeOptions]);
 
   const somaPrecoComEleMesmo = () => {
     let soma = Number(preco + Number(produtoData.value) * 100);
@@ -90,7 +91,7 @@ function Product() {
 
         <div className='centro-produto-container'>
           <div className='produto-image-container'>
-            <img src={produtoData.img} />
+            <img src={produtoData.img} alt={produtoData.description} />
           </div>
 
           <div className='produto-infos'>
