@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://ES2-UFPI.github.io/Fashion-Shop",
   "scripts": {
     "start": "node index.js",
     "start-dev": "nodemon .",
