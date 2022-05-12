@@ -24,7 +24,7 @@ function Product() {
   let { idProduto } = useParams(); //usado para pegar o produto baseado no id passado como parametro
 
   useEffect(() => {
-    const productFound = getProducts().find((item) => { item.id === idProduto });
+    const productFound = getProducts().find((item) => (item.id === idProduto));
 
     setPreco(Number(productFound.value) * 100);
 
