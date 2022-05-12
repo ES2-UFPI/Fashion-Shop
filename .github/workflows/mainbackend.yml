@@ -22,8 +22,6 @@ jobs:
        node-version: ${{ matrix.node-version }}
    - name: Install Packages
      run: npm install
-   - name: Build project
-     run: npm run start
    - name: Upload production-ready build files
      uses: actions/upload-artifact@v2
      with:
@@ -33,17 +31,10 @@ jobs:
    name: Deploy
    needs: build
    runs-on: ubuntu-latest
-   if: github.ref == 'refs/heads/dev'
-
    steps:
-   - name: Download artifact
-     uses: actions/download-artifact@v2
+   - uses: actions/checkout@v2
+   - uses: akhileshns/heroku-deploy@v3.12.12 
      with:
-       name: production-files
-       path: ./build
-
-   - name: Deploy to gh-pages
-     uses: peaceiris/actions-gh-pages@v3
-     with:
-       github_token: ${{ secrets.GITHUB_TOKEN }}
-       publish_dir: ./build
+       heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+       heroku_app_name: "fashion-shop-backend"
+       eroku_email: "emanuelcascone@gmail.com"
