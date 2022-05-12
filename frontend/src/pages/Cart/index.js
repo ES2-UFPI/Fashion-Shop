@@ -11,7 +11,6 @@ import './styles.css';
 function Cart() {
   const carrinho = useSelector(state => state.carrinho);
   const [valorTotalCarrinho, setValorTotalCarrinho] = useState(0);
-  //const [qtdProdutos, setQtdPtodutos] = useState(0);
 
   const initialCartValue = 0;
 
@@ -19,7 +18,7 @@ function Cart() {
 
   useEffect(() => {
     setValorTotalCarrinho(array_valores.reduce((previousValue, currentValue) => previousValue + currentValue, initialCartValue));
-  }, [valorTotalCarrinho]);
+  }, [carrinho.length, array_valores]);
 
   return (
     <>
@@ -47,7 +46,7 @@ function Cart() {
 
           </div>
           <div>
-            <CartInfo total={valorTotalCarrinho} />
+            <CartInfo total={valorTotalCarrinho.toFixed(2)} />
           </div>
         </div>
 
